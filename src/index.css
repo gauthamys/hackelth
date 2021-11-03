@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 .navitem{
-    @apply pl-12 pr-8 py-3 hover:bg-white hover:text-black hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-110
+    @apply pl-12 pr-8 py-3 hover:bg-white hover:text-black hover:shadow-2xl transition duration-200 ease-in-out transform hover:scale-110;
+}
+
+.namecard{
+    @apply flex-1 rounded-xl text-white m-2 bg-gradient-to-t from-pink-400 to-red-500 transition duration-300 ease-in-out transform hover:scale-110 group-hover:bg-black;
+}
+
+.heading{
+    @apply relative ml-60 pt-8 p-4;
 }

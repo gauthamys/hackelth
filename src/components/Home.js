@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Card from "./Card";
 
 class Home extends Component{
     constructor(props){
@@ -6,11 +7,11 @@ class Home extends Component{
     }
     render(){
         return(
-            <div className='relative ml-60 p-4 pt-8'>
-                <div class="text-7xl h-screen">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+            <div className='heading'>
+                <div className='h-screen'>
+                    <span class="text-7xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                         Hack-E-Lth 2021
-                    </span>
+                </span>
                 </div>
             </div>
         )

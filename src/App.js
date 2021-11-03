@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Device from './components/Devices';
 import Contact from './components/Contact';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
+
 function App() {
   return (
     <>
