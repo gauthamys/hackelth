@@ -1,17 +1,33 @@
 import { Component } from "react";
-import Card from "./Card";
+import axios from "axios";
 
 class Home extends Component{
     constructor(props){
         super(props);
+        this.state={
+            isLoaded:false,
+            dat:['hi'],
+            tex:'haha'
+        }
+    }
+    componentDidMount(){
+        axios.get('http://localhost:5000/get_parts').then((response)=>{
+            this.setState({
+                dat: (response.data).toString(),
+                isLoaded: true
+            })
+        })
     }
     render(){
         return(
             <div className='heading'>
                 <div className='h-screen'>
-                    <span class="text-7xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-                        Hack-E-Lth 2021
-                </span>
+                    <span class="text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                        Prognostic Monitoring and Analysis of Healthscores
+                    </span>
+                    <div className='text-black'>
+                        {this.state.dat}
+                    </div>
                 </div>
             </div>
         )

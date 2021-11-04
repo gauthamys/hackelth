@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <SideBar />
-      <div className='bg-gray-200'>
+      <div>
       <Switch>
         <Route path='/devices' component={Device} />
         <Route path='/contact' component={Contact} />
