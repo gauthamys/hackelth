@@ -8,11 +8,11 @@ function App() {
     <>
       <SideBar />
       <div className='bg-gray-200'>
-      <Switch>
-        <Route path='/devices' component={Device} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/' component={Home} />
-      </Switch>
+        <Switch>
+          <Route path='/devices' component={Device} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/' component={Home} />
+        </Switch>
       </div>
     </>
     
