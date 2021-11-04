@@ -1,5 +1,6 @@
 import { Component } from "react";
-import axios from "axios";
+//import Plot from 'react-plotly.js';
+import Barchart from "./Barchart";
 
 class Home extends Component{
     constructor(props){

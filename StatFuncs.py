@@ -22,6 +22,7 @@ def to_json(data):
   return jsonify(result_data)
 
 def get_service_plot():
+    # returns service counts for all the sys ids
     counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.year).count().to_frame().reset_index()
     return to_json(counts)
 
