@@ -51,6 +51,7 @@ def get_freq_sys():
   
 def get_ec_stats():
   stats = ec.groupby(['aggr_month','aggr_year']).agg({'aggr_value':'sum'}).reset_index()
+  stats = stats.sort_values(['aggr_year', 'aggr_month'], ascending=True)
   return toSeries(stats)
   
 
