@@ -9,7 +9,7 @@ class ExamCounts extends Component{
     constructor(props){
         super(props);
         this.state={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+            x: [],
             aggr_month:[],
             aggr_year:[],
             aggr_value:[]
@@ -17,6 +17,7 @@ class ExamCounts extends Component{
     }
     componentDidMount(){
         axios.get('http://localhost:5000/get_ec').then(response => {
+            let ax=[];
             let av=[];
             let am=[];
             let ay=[];
@@ -30,10 +31,15 @@ class ExamCounts extends Component{
             for (const property in data.aggr_year){
                 ay.push(data.aggr_year[property])
             }
+            for (var i=0; i<20; i++){
+                ax.push(`__${data.aggr_year[i]}, ${data.aggr_month[i]}__`);
+            }
+            console.log(ax);
             this.setState({
                 aggr_month: am,
                 aggr_year: ay,
-                aggr_value: av
+                aggr_value: av,
+                x: ax
             })
         })
     }
@@ -54,24 +60,4 @@ class ExamCounts extends Component{
     }
 }
 
-function Barchart(props){
-    const [data, setData] = useState([]);
-    axios.get('http://localhost:5000/get_ec').then((res)=>{
-        setData(res.data)
-        console.log(data)
-    }) 
-    return(
-        <div className='relative mt-5 ml-4'>
-            <Plot
-                data={[
-                    {type: 'bar',
-                        x: ['one', 'two', 'three'],
-                        y: [23, 124, 55],
-                        marker: {color: '#148F77'}
-                    }]}
-                layout={ {width: 700, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"Exam counts"}}
-            />
-        </div>
-    );
-}
 export default ExamCounts;
