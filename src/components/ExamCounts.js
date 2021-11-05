@@ -32,7 +32,7 @@ class ExamCounts extends Component{
                 ay.push(data.aggr_year[property])
             }
             for (var i=0; i<20; i++){
-                ax.push(`__${data.aggr_year[i]}, ${data.aggr_month[i]}__`);
+                ax.push(`__${data.aggr_year[i]},${data.aggr_month[i]}`);
             }
             console.log(ax);
             this.setState({
