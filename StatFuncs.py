@@ -28,7 +28,7 @@ def toSeries(df):
   for index, rows in df.iterrows():
     row_data.append(list(rows))
   json_res = {"rows" : len(col), "columns" : len(row_data), "row_data" : row_data, "col_data" : col }
-  return json_res
+  return jsonify(json_res)
 
 def get_service_plot():
     # returns service counts for all the sys ids
