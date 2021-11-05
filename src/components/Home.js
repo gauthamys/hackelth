@@ -1,17 +1,18 @@
 import { Component } from "react";
-//import Plot from 'react-plotly.js';
+import axios from 'axios';
 import Barchart from "./Barchart";
+import Intro from "./Intro";
 
 class Home extends Component{
     constructor(props){
         super(props);
         this.state={
             isLoaded:false,
-            dat:['hi'],
+            data:[],
             tex:'haha'
         }
     }
-    componentDidMount(){
+    componentWillMount(){
         axios.get('http://localhost:5000/get_parts').then((response)=>{
             this.setState({
                 dat: (response.data).toString(),
@@ -23,11 +24,14 @@ class Home extends Component{
         return(
             <div className='heading'>
                 <div className='h-screen'>
-                    <span class="text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-                        Prognostic Monitoring and Analysis of Healthscores
+                    <span class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                        Global Insights
                     </span>
+                    <Barchart test='test'/>
                     <div className='text-black'>
-                        {this.state.dat}
+                        {(this.state.data).map(element => {
+                            <p>hi</p>
+                        })}
                     </div>
                 </div>
             </div>

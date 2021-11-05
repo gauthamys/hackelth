@@ -24,24 +24,24 @@ def to_json(data):
 def get_service_plot():
     # returns service counts for all the sys ids
     counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.year).count().to_frame().reset_index()
-    return to_json(counts)
+    return counts.to_dict()
 
 def get_service_month():
   counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.month).count().to_frame().reset_index()
-  return to_json(counts)
+  return counts.to_dict()
 
 def get_parts_counts():
   counts=sr["dummy_sysid"].groupby(sr.dummy_part_number).count().to_frame().reset_index()
-  return to_json(counts[:200])
+  return counts.to_dict()
 
 def get_freq_sys():
   freqs=sr_sys_counts.loc[:,["dummy_sysid","count"]]
   freqs=freqs.sort_values('count',ascending=False).head(50)
-  return to_json(freqs)
+  return freqs.to_dict()
   
 def get_ec_stats():
   stats = ec.groupby(['aggr_month','aggr_year']).agg({'aggr_value':'sum'}).reset_index()
-  return to_json(stats)
+  return stats.to_dict()
   
 
 
