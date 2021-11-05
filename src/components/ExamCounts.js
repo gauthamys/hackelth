@@ -22,19 +22,15 @@ class ExamCounts extends Component{
             let am=[];
             let ay=[];
             let data=response.data;
-            for (const property in data.aggr_month){
-                am.push(data.aggr_month[property]);
+            for (const property in data.row_data){
+                 am.push(data.row_data[property][0]);
+                 av.push(data.row_data[property][2]);
+                 ay.push(data.row_data[property][1]);
+                 //ax.push(`Y-${data.row_data[property][1]}, M-${data.row_data[property][0]}`);
+                 ax.push(`${data.row_data[property][0]}/${data.row_data[property][1]}`);
             }
-            for (const property in data.aggr_value){
-                av.push(data.aggr_value[property]);
-            }
-            for (const property in data.aggr_year){
-                ay.push(data.aggr_year[property])
-            }
-            for (var i=0; i<20; i++){
-                ax.push(`__${data.aggr_year[i]}, ${data.aggr_month[i]}__`);
-            }
-            console.log(ax);
+            //console.log(am);
+            //console.log(ax);
             this.setState({
                 aggr_month: am,
                 aggr_year: ay,
