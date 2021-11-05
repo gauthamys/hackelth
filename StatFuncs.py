@@ -17,31 +17,41 @@ def to_json(data):
   final_row_data = []
   for index, rows in data.iterrows():
     final_row_data.append(rows.to_dict())
-    json_result = {'rows': row_count, 'cols': column_count, 'columns': column_names, 'rowData': final_row_data}
-    result_data.append(json_result)
+  json_result = {'rows': row_count, 'cols': column_count, 'columns': column_names, 'rowData': final_row_data}
+  result_data.append(json_result)
   return jsonify(result_data)
+
+def toSeries(df):
+  #row_data=[list(df.columns)]
+  col = list(df.columns)
+  row_data = []
+  for index, rows in df.iterrows():
+    row_data.append(list(rows))
+  json_res = {"rows" : len(col), "columns" : len(row_data), "row_data" : row_data, "col_data" : col }
+  return json_res
 
 def get_service_plot():
     # returns service counts for all the sys ids
     counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.year).count().to_frame().reset_index()
-    return counts.to_dict()
+    #return counts.to_dict()
+    return toSeries(counts)
 
 def get_service_month():
   counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.month).count().to_frame().reset_index()
-  return counts.to_dict()
+  return toSeries(counts)
 
 def get_parts_counts():
   counts=sr["dummy_sysid"].groupby(sr.dummy_part_number).count().to_frame().reset_index()
-  return counts.to_dict()
+  return toSeries(counts)
 
 def get_freq_sys():
   freqs=sr_sys_counts.loc[:,["dummy_sysid","count"]]
   freqs=freqs.sort_values('count',ascending=False).head(50)
-  return freqs.to_dict()
+  return toSeries(freqs)
   
 def get_ec_stats():
   stats = ec.groupby(['aggr_month','aggr_year']).agg({'aggr_value':'sum'}).reset_index()
-  return stats.to_dict()
+  return toSeries(stats)
   
 
 
