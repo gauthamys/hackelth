@@ -54,8 +54,23 @@ class ExamCounts extends Component{
                             }
                         }
                     ]} 
-                    layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
-                            xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts'}}}
+                    layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
+                            xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts',
+                        annotations:[
+                            {
+                                x: '10/2020',
+                                y: 5736551,
+                                xref: 'x',
+                                yref: 'y',
+                                text: 'Annotation Text',
+                                showarrow: true,
+                                arrowhead: 7,
+                                ax: 0,
+                                ay: -40
+                            }                            
+                        ]
+
+                        }}}
                         />
                         <Insights />
                 </div>

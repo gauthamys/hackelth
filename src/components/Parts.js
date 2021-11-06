@@ -32,7 +32,7 @@ class Parts extends Component{
     }
     render(){
         return(
-            <div className='mt-5 mb-36 ml-4'>
+            <div className='mt-7 mb-36 ml-4'>
                 <div className='inline-flex'>
                 <Plot data={[
                     {
@@ -43,7 +43,7 @@ class Parts extends Component{
                             color: '#1ABC9C'
                         }
                     }
-                    ]} layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',
+                    ]} layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',
                                 xaxis:{title:'Part ID'}, yaxis:{title:'Replace Frequency'}}}/>
                 <Insights />
                 </div>
