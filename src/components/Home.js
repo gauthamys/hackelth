@@ -8,15 +8,19 @@ class Home extends Component{
     }
     render(){
         return(
+            <>
             <div className='heading'>
                 <div>
-                    <span class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                    <span class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-600">
                         Global Insights
                     </span>
-                    <ExamCounts />
-                    <Parts />
+                    <div className='mt-10'>
+                        <ExamCounts />
+                        <Parts />
+                    </div>
                 </div>
             </div>
+            </>
         )
     }
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
+import Insights from "./Insights";
 
 const Plot = createPlotlyComponent(Plotly);
 
@@ -31,7 +32,8 @@ class Parts extends Component{
     }
     render(){
         return(
-            <div className='my-5 ml-4'>
+            <div className='mt-5 mb-36 ml-4'>
+                <div className='inline-flex'>
                 <Plot data={[
                     {
                         type: 'bar',
@@ -41,8 +43,10 @@ class Parts extends Component{
                             color: '#1ABC9C'
                         }
                     }
-                ]} layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',
-                            xaxis:{title:'Part ID'}, yaxis:{title:'Replace Frequency'}}}/>
+                    ]} layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',
+                                xaxis:{title:'Part ID'}, yaxis:{title:'Replace Frequency'}}}/>
+                <Insights />
+                </div>
             </div>
         )
     }

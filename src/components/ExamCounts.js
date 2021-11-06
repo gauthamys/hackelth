@@ -1,4 +1,5 @@
-import React, { Component, useState } from "react";
+import React, { Component, useRef, useState } from "react";
+import Insights from "./Insights";
 import Plotly from "plotly.js-basic-dist";
 
 import createPlotlyComponent from "react-plotly.js/factory";
@@ -42,19 +43,22 @@ class ExamCounts extends Component{
     render(){
         return(
             <div className='mt-5 ml-4'>
-            <Plot data={[
-                {
-                    type: 'area',
-                    x: this.state.x,
-                    y: this.state.aggr_value,
-                    marker:{
-                        color: '#1ABC9C'
-                    }
-                }
-            ]} 
-            layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
-                    xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts'}}}
-                />
+                <div className='inline-flex'>
+                    <Plot data={[
+                        {
+                            type: 'area',
+                            x: this.state.x,
+                            y: this.state.aggr_value,
+                            marker:{
+                                color: '#1ABC9C'
+                            }
+                        }
+                    ]} 
+                    layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
+                            xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts'}}}
+                        />
+                        <Insights />
+                </div>
             </div>
         )
     }
