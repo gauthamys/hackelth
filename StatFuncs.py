@@ -27,7 +27,7 @@ def toSeries(df):
   row_data = []
   for index, rows in df.iterrows():
     row_data.append(list(rows))
-  json_res = {"rows" : len(col), "columns" : len(row_data), "row_data" : row_data, "col_data" : col }
+  json_res = {"rows" : len(row_data), "columns" : len(col), "row_data" : row_data, "col_data" : col }
   return jsonify(json_res)
 
 def get_sr_costs():

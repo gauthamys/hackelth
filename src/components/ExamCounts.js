@@ -72,7 +72,7 @@ class ExamCounts extends Component{
 
                         }}}
                         />
-                        <Insights />
+                        <Insights val="Most used device" ans=""/>
                 </div>
             </div>
         )

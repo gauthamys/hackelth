@@ -12,20 +12,25 @@ class Parts extends Component{
         this.state = {
             x:[],
             y:[],
+            max:0
         }
     }
     componentDidMount(){
         let ax=[];
         let ay=[];
+        let m;
         axios.get('http://localhost:5000/get_parts').then(response => {
             console.log(response.data.row_data);
-            for(var i=0;i<response.data.columns;i++){
+            console.log(response.data.columns);
+            for(var i=0;i<response.data.rows;i++){
                 ax.push(response.data.row_data[i][0]);
                 ay.push(response.data.row_data[i][1]);
             }
+            m = response.data.row_data[response.data.rows-1][0];
             this.setState({
                 x: ax,
-                y: ay
+                y: ay,
+                max: m
             })
         })
         console.log(this.state.x);
@@ -45,7 +50,7 @@ class Parts extends Component{
                     }
                     ]} layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',
                                 xaxis:{title:'Part ID'}, yaxis:{title:'Replace Frequency'}}}/>
-                <Insights />
+                <Insights val="Most frequently replaced part:" ans={this.state.max}/>
                 </div>
             </div>
         )
