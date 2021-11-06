@@ -38,5 +38,9 @@ def get_freqencies():
 def get_ec_data():
     return get_ec_stats()
 
+@app.route('/get_total_ec',methods=['GET'])
+def get_freq_used():
+    return get_total_ec()
+
 if __name__ == '__main__':
     app.run(debug=False)
