@@ -66,6 +66,9 @@ def get_ec_stats():
   stats = stats.sort_values(['aggr_year', 'aggr_month'], ascending=True)
   return toSeries(stats)
   
-
+def get_total_ec():
+  counts = ec.groupby(['dummy_sysid']).agg({'aggr_value':'sum'}).reset_index()
+  counts = counts.sort_values('aggr_value', ascending=False)
+  return toSeries(counts)
 
 
