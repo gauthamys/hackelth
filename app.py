@@ -10,6 +10,14 @@ CORS(app)
 def root():
 	return render_template('index.html', message = "Flask")
 
+@app.route('/get_sr_costs',methods=['GET'])
+def sr_costs():
+    return get_sr_costs()
+
+@app.route('/get_device',methods=['GET'])
+def sys():
+    return get_sys()
+
 @app.route('/get_service',methods=['GET'])
 def service_data():
     return get_service_plot()

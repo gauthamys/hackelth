@@ -44,12 +44,16 @@ class ExamCounts extends Component{
             <div className='mt-5 ml-4'>
             <Plot data={[
                 {
-                    type: 'line',
+                    type: 'area',
                     x: this.state.x,
-                    y: this.state.aggr_value
+                    y: this.state.aggr_value,
+                    marker:{
+                        color: '#1ABC9C'
+                    }
                 }
             ]} 
-            layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"Exam counts"}}
+            layout={{width: 900, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
+                    xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts'}}}
                 />
             </div>
         )

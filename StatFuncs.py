@@ -30,6 +30,16 @@ def toSeries(df):
   json_res = {"rows" : len(col), "columns" : len(row_data), "row_data" : row_data, "col_data" : col }
   return jsonify(json_res)
 
+def get_sr_costs():
+  src=sr.groupby('dummy_sysid').sum('Cos').drop('hour',axis='columns')
+  srh=sr.groupby('dummy_sysid').sum('hour').drop('Cos',axis='columns')
+  return {'cost':src,'hours':srh}
+  
+def get_sys():
+  ib.drop_duplicates(inplace=True)
+  ib.drop(['ownershiptype','systemcoveragelevelwarrantyc','transferacceptancedate','shippeddate','last_covered_date'],axis='columns',inplace=True)
+  return ib.to_dict()
+
 def get_service_plot():
     # returns service counts for all the sys ids
     counts=sr["dummy_sysid"].groupby(sr.sr_open_date.dt.year).count().to_frame().reset_index()
@@ -42,11 +52,13 @@ def get_service_month():
 
 def get_parts_counts():
   counts=sr["dummy_sysid"].groupby(sr.dummy_part_number).count().to_frame().reset_index()
+  counts=counts[counts['dummy_sysid']>=10]
+  counts = counts.sort_values('dummy_sysid',ascending=True)
   return toSeries(counts)
 
 def get_freq_sys():
   freqs=sr_sys_counts.loc[:,["dummy_sysid","count"]]
-  freqs=freqs.sort_values('count',ascending=False).head(50)
+  freqs=freqs.sort_values('count',ascending=True).head(50)
   return toSeries(freqs)
   
 def get_ec_stats():
