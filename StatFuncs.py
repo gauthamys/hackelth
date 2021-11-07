@@ -75,6 +75,10 @@ def predict(sysid):
   status_info=pd.read_csv("all_data.csv",index_col=False)
   row=status_info.loc[:,['dummy_sysid','Label']]
   label = row.loc[row['dummy_sysid']==sysid]
-  return list(label["Label"])[0]
+  label_list =  list(label["Label"])
+  if len(label_list)>0:
+    return label_list[0]
+  else:
+    return "System details not found"
 
 
