@@ -71,4 +71,10 @@ def get_total_ec():
   counts = counts.sort_values('aggr_value', ascending=False)
   return toSeries(counts)
 
+def predict(sysid):
+  status_info=pd.read_csv("all_data.csv",index_col=False)
+  row=status_info.loc[:,['dummy_sysid','Label']]
+  label = row.loc[row['dummy_sysid']==sysid]
+  return list(label["Label"])[0]
+
 

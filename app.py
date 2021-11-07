@@ -1,6 +1,7 @@
 from flask import *
 from StatFuncs import *
 from flask_cors import CORS
+from flask import request
 #import pandas as pd
 
 app = Flask(__name__)
@@ -41,6 +42,11 @@ def get_ec_data():
 @app.route('/get_total_ec',methods=['GET'])
 def get_freq_used():
     return get_total_ec()
+
+@app.route('/predict',methods=['POST'])
+def get_predictions():
+    sysid = request.form['sysid']
+    return predict(sysid)
 
 if __name__ == '__main__':
     app.run(debug=False)
