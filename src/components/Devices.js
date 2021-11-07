@@ -11,7 +11,7 @@ function Device(){
                             <input
                                 type="text"
                                 placeholder="Search Here"
-                                class="w-5 rounded-tl-full rounded-bl-full py-2 px-4 w-full" />
+                                className="w-5 rounded-tl-full rounded-bl-full py-2 px-4" />
                             <button class="bg-green-300 rounded-tr-full rounded-br-full hover:bg-red-300 py-2 px-4">
                                 <p class="font-semibold text-base uppercase">Search</p>
                             </button>
