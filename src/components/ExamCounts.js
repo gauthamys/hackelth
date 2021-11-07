@@ -13,7 +13,8 @@ class ExamCounts extends Component{
             x: [],
             aggr_month:[],
             aggr_year:[],
-            aggr_value:[]
+            aggr_value:[],
+            sys: ""
         }
     }
     componentDidMount(){
@@ -37,6 +38,13 @@ class ExamCounts extends Component{
                 aggr_year: ay,
                 aggr_value: av,
                 x: ax
+            })
+        })
+        axios.get('http://localhost:5000/get_total_ec').then(response => {
+            let data = response.data;
+            let max_val = data.row_data[0][1];
+            this.setState({
+                sys: max_val
             })
         })
     }
@@ -72,7 +80,7 @@ class ExamCounts extends Component{
 
                         }}}
                         />
-                        <Insights val="Most used device" ans=""/>
+                        <Insights val="Most used device:" ans={`sys${this.state.sys}`}/>
                 </div>
             </div>
         )
