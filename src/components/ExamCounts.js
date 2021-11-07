@@ -72,7 +72,7 @@ class ExamCounts extends Component{
 
                         }}}
                         />
-                        <Insights val="Most used device" ans=""/>
+                        <Insights val="Month with most services" ans="10/2020"/>
                 </div>
             </div>
         )
