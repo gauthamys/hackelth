@@ -1,13 +1,17 @@
+from logging import critical
+from os import stat
 import pandas as pd
 from flask import jsonify
-sr_sys_counts=pd.read_csv("./data/sr_sys_counts.csv")
-ib = pd.read_csv("./data/Hackathon_IB_Data_1.csv")
-sr = pd.read_csv("./data/Hackathon_SR_Data_1.csv")
-ec = pd.read_csv("./data/Hackathon_exam_count_Data.csv")
+sr_sys_counts=pd.read_csv("./public/data/sr_sys_counts.csv")
+ib = pd.read_csv("./public/data/Hackathon_IB_Data_1.csv")
+sr = pd.read_csv("./public/data/Hackathon_SR_Data_1.csv")
+ec = pd.read_csv("./public/data/Hackathon_exam_count_Data.csv")
+status_info=pd.read_csv("./public/data/all_data.csv",index_col=False)
 ib['installdate'] = pd.to_datetime(ib['installdate'],errors = 'coerce').dt.normalize()
 ib['deinstalldate'] = pd.to_datetime(ib['deinstalldate'],errors = 'coerce').dt.normalize()
 sr['sr_open_date'] = pd.to_datetime(sr['sr_open_date'],errors = 'coerce').dt.normalize()
 sr['sr_close_date'] = pd.to_datetime(sr['sr_close_date'],errors = 'coerce').dt.normalize()
+
 
 def to_json(data):
   result_data = []
@@ -28,7 +32,7 @@ def toSeries(df):
   for index, rows in df.iterrows():
     row_data.append(list(rows))
   json_res = {"rows" : len(row_data), "columns" : len(col), "row_data" : row_data, "col_data" : col }
-  return jsonify(json_res)
+  return json_res
 
 def get_sr_costs():
   src=sr.groupby('dummy_sysid').sum('Cos').drop('hour',axis='columns')
@@ -71,14 +75,18 @@ def get_total_ec():
   counts = counts.sort_values('aggr_value', ascending=False)
   return toSeries(counts)
 
+def get_red_devices():
+  cr=status_info[status_info['Label']=='Red'].drop(['drop'],axis='columns')
+  return toSeries(cr)
+
 def predict(sysid):
-  status_info=pd.read_csv("all_data.csv",index_col=False)
-  row=status_info.loc[:,['dummy_sysid','Label']]
-  label = row.loc[row['dummy_sysid']==sysid]
-  label_list =  list(label["Label"])
-  if len(label_list)>0:
-    return label_list[0]
-  else:
-    return "System details not found"
+  #row=status_info.loc[:,['dummy_sysid','Label']]
+  label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['drop','dummy_part_number'],axis='columns')
+  return toSeries(label)
+  #label_list =  list(label["Label"])
+  #if len(label_list)>0:
+  #return label_list[0]
+  #else:
+  #  return "System details not found"
 
 
