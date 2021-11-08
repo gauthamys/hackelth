@@ -42,7 +42,7 @@ def get_sr_costs():
 def get_sys():
   ib.drop_duplicates(inplace=True)
   ib.drop(['ownershiptype','systemcoveragelevelwarrantyc','transferacceptancedate','shippeddate','last_covered_date'],axis='columns',inplace=True)
-  return ib.to_dict()
+  return toSeries(ib)
 
 def get_service_plot():
     # returns service counts for all the sys ids
