@@ -81,7 +81,7 @@ def get_devices():
 
 def predict(sysid):
   #row=status_info.loc[:,['dummy_sysid','Label']]
-  label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['dummy_part_number','drop'],axis='columns')
+  label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['dummy_part_number'],axis='columns')
   return toSeries(label)
   #label_list =  list(label["Label"])
   #if len(label_list)>0:
