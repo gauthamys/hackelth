@@ -37,7 +37,7 @@ class Parts extends Component{
     }
     render(){
         return(
-            <div className='mt-7 mb-36 ml-4'>
+            <div className='mt-7 ml-4'>
                 <div className='inline-flex'>
                 <Plot data={[
                     {

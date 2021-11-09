@@ -47,6 +47,10 @@ def get_freq_used():
 def get_devs():
     return get_devices()
 
+@app.route('/get_labels',methods=['GET'])
+def get_lbs():
+    return get_labels()
+
 @app.route('/predict',methods=['POST'])
 def get_predictions():
     data = request.json

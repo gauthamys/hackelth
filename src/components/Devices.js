@@ -8,18 +8,24 @@ class Device extends Component{
             sysid: '',
             data: [],
             row_data: [],
-            label: ''
+            yellow: [],
+            red: [],
+            green: []
         }
         this.handleChange = this.handleChange.bind(this);
     }
     componentDidMount(){
+        axios.get('http://localhost:5000/get_devices').then(res => {
+            this.setState({
+                everything: JSON.parse(res.data)
+            })
+        })
         axios.post('http://localhost:5000/predict',{'sysid':this.state.sysid}).then(response=>{
             if(response.data.rows == 1){
                 console.log(response.data)
                 this.setState({
                     data: response.data,
-                    row_data: response.data.row_data[0],
-                    label: response.data.row_data[0][6]
+                    row_data: response.data.row_data[0]
                 })
             }
         })
@@ -60,7 +66,7 @@ class Device extends Component{
                                 </button>
                             </div>
                         </div>
-                        <table class="table-auto w-11/12 text-2xl rounded-bl-full rounded-br-full mt-4">
+                        <table class="table-fixed w-11/12 text-2xl rounded-bl-full rounded-br-full mt-4">
                             <thead className="text-left border text-green-400 bg-gray-200">
                                 <tr>
                                 <th className="py-5 px-4">Device</th>
@@ -71,11 +77,11 @@ class Device extends Component{
                                 </tr>
                             </thead>  
                             <tbody>
-                                <tr className={'text-base '+(color[this.state.label])}>
+                                <tr className={'text-base '+(color[this.state.row_data[6]])}>
                                     <td className="py-5 px-4">{this.state.sysid}</td>
-                                    <td>{this.state.row_data[3]}</td>
                                     <td>{this.state.row_data[2]}</td>
-                                    <td>{this.state.row_data[4]}</td>
+                                    <td>{this.state.row_data[1]}</td>
+                                    <td>{this.state.row_data[3]}</td>
                                     <td>{this.state.row_data[5]}</td>
                                 </tr>
                             </tbody>
