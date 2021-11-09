@@ -57,7 +57,7 @@ def get_service_month():
 def get_parts_counts():
   counts=sr["dummy_sysid"].groupby(sr.dummy_part_number).count().to_frame().reset_index()
   counts=counts[counts['dummy_sysid']>=10]
-  counts = counts.sort_values('dummy_sysid',ascending=True)
+  #counts = counts.sort_values('dummy_sysid',ascending=True)
   return toSeries(counts)
 
 def get_freq_sys():
@@ -80,7 +80,7 @@ def get_labels():
   return gc['dummy_sysid'].to_dict()
 
 def get_devices():
-  cr=status_info.drop(['drop'],axis='columns')
+  cr=status_info
   return toSeries(cr)
 
 def predict(sysid):
