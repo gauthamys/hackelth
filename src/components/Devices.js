@@ -41,7 +41,7 @@ class Device extends Component{
         })
     }
     render(){
-        const color={'Green':'bg-green-300 text-green-900','Red':'bg-red-300 text-red-900','Yellow':'bg-yellow-200 text-yellow-900'}
+        const color={Green:'bg-green-300 text-green-900',Red:'bg-red-300 text-red-900',Yellow:'bg-yellow-200 text-yellow-900'}
         return(
             <div className='heading'>
                 <div class="text-7xl">
@@ -70,8 +70,8 @@ class Device extends Component{
                                 <th>Time (hrs)</th>
                                 </tr>
                             </thead>  
-                            <tbody className='text-base'>
-                                <tr className={color[this.state.label]}>
+                            <tbody>
+                                <tr className={'text-base '+(color[this.state.label])}>
                                     <td className="py-5 px-4">{this.state.sysid}</td>
                                     <td>{this.state.row_data[3]}</td>
                                     <td>{this.state.row_data[2]}</td>

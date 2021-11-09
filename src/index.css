@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+td{
+    @apply py-5 px-4;
+}
+
 .navitem{
     @apply pl-12 pr-8 py-3 hover:bg-white hover:text-black hover:shadow-2xl transition duration-200 ease-in-out transform hover:scale-110;
 }

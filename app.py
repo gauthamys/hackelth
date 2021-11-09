@@ -43,9 +43,9 @@ def get_ec_data():
 def get_freq_used():
     return get_total_ec()
 
-@app.route('/get_red_devices',methods=['GET'])
+@app.route('/get_devices',methods=['GET'])
 def get_devs():
-    return get_red_devices()
+    return get_devices()
 
 @app.route('/predict',methods=['POST'])
 def get_predictions():
