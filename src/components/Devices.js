@@ -19,7 +19,7 @@ class Device extends Component{
                 this.setState({
                     data: response.data,
                     row_data: response.data.row_data[0],
-                    label: response.data.row_data[0][6]
+                    label: response.data.row_data[0][7]
                 })
             }
         })
@@ -34,7 +34,7 @@ class Device extends Component{
                     sysid: event.target.value,
                     data: response.data,
                     row_data: response.data.row_data[0],
-                    label: response.data.row_data[0][6]
+                    label: response.data.row_data[0][7]
                 })
             }
             
@@ -64,10 +64,10 @@ class Device extends Component{
                             <thead className="text-left border text-green-400 bg-gray-200">
                                 <tr>
                                 <th className="py-5 px-4">Device</th>
-                                <th>RUL</th>
+                                <th>RUL (Yrs)</th>
                                 <th>Age (Yrs)</th>
                                 <th>Exam Count</th>
-                                <th>Cost (hrs)</th>
+                                <th>Time (hrs)</th>
                                 </tr>
                             </thead>  
                             <tbody className='text-base'>

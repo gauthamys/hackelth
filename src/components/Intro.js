@@ -29,7 +29,7 @@ function Intro() {
                     <div class="grid place-items-center">
                         <img src={Logo} alt="Logo"/>
                     </div>
-                    
+                    <div className="text-2xl py-5">Health score estimated using Decision Tree Regression.</div>
                 </div>
             </Modal>
         </div>
