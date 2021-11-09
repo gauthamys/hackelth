@@ -75,13 +75,13 @@ def get_total_ec():
   counts = counts.sort_values('aggr_value', ascending=False)
   return toSeries(counts)
 
-def get_red_devices():
-  cr=status_info[status_info['Label']=='Red'].drop(['drop'],axis='columns')
+def get_devices():
+  cr=status_info.drop(['drop'],axis='columns')
   return toSeries(cr)
 
 def predict(sysid):
   #row=status_info.loc[:,['dummy_sysid','Label']]
-  label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['dummy_part_number'],axis='columns')
+  label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['dummy_part_number','drop'],axis='columns')
   return toSeries(label)
   #label_list =  list(label["Label"])
   #if len(label_list)>0:
