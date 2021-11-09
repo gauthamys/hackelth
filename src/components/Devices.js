@@ -73,9 +73,9 @@ class Device extends Component{
                             <tbody className='text-base'>
                                 <tr className={color[this.state.label]}>
                                     <td className="py-5 px-4">{this.state.sysid}</td>
-                                    <td>{this.state.row_data[2]}</td>
-                                    <td>{this.state.row_data[1]}</td>
                                     <td>{this.state.row_data[3]}</td>
+                                    <td>{this.state.row_data[2]}</td>
+                                    <td>{this.state.row_data[4]}</td>
                                     <td>{this.state.row_data[5]}</td>
                                 </tr>
                             </tbody>
