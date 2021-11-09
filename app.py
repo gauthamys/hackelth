@@ -43,9 +43,14 @@ def get_ec_data():
 def get_freq_used():
     return get_total_ec()
 
+@app.route('/get_red_devices',methods=['GET'])
+def get_devs():
+    return get_red_devices()
+
 @app.route('/predict',methods=['POST'])
 def get_predictions():
-    sysid = request.form['sysid']
+    data = request.json
+    sysid = data['sysid']
     return predict(sysid)
 
 if __name__ == '__main__':

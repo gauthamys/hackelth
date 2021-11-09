@@ -21,7 +21,7 @@ function Intro() {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Example Modal"
-                className='absolute center rounded-2xl my-2 mx-48 w-3/4 h-3/4 bg-gray-800 text-white opacity-95'
+                className='absolute center border-4 border-blue-700 rounded-2xl my-2 mx-48 w-3/4 h-3/4 bg-blue-800 text-white opacity-95'
             >
                 <div className='text-center p-8'>
                     <div className='text-3xl'>Prognostic Monitoring and Analysis of Healthscores</div>
