@@ -75,6 +75,10 @@ def get_total_ec():
   counts = counts.sort_values('aggr_value', ascending=False)
   return toSeries(counts)
 
+def get_labels():
+  gc = status_info.groupby(['Label']).count()
+  return gc['dummy_sysid'].to_dict()
+
 def get_devices():
   cr=status_info.drop(['drop'],axis='columns')
   return toSeries(cr)
@@ -90,3 +94,4 @@ def predict(sysid):
   #  return "System details not found"
 
 
+print(get_labels())
