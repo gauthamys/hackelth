@@ -77,15 +77,26 @@ class Device extends Component{
                                 </tr>
                             </thead>  
                             <tbody>
-                                <tr className={'text-base '+(color[this.state.row_data[6]])}>
+                                <tr className={'text-base '+(color[this.state.row_data[7]])}>
                                     <td className="py-5 px-4">{this.state.sysid}</td>
-                                    <td>{this.state.row_data[2]}</td>
-                                    <td>{this.state.row_data[1]}</td>
                                     <td>{this.state.row_data[3]}</td>
+                                    <td>{this.state.row_data[2]}</td>
+                                    <td>{this.state.row_data[4]}</td>
                                     <td>{this.state.row_data[5]}</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div className="text-blue-400 text-2xl pt-3 mx-4">
+                            <p class="py-2 hover:text-green-500">Health Status: <span class="text-black">{this.state.row_data[7]}</span></p>
+                            <p class="py-2 hover:text-green-500">Average time between services</p>
+                            <p class="py-2 hover:text-green-500">Average down-time</p>
+                            <p class="py-2 hover:text-green-500">Average service requests</p>
+                            <p class="py-2 hover:text-green-500">Total parts replaced</p>
+                            <p class="py-2 hover:text-green-500">First service request</p>
+                            <p class="py-2 hover:text-green-500">Install date</p>
+                            <p class="py-2 hover:text-green-500">Service status</p>
+                            <p class="py-2 hover:text-green-500">Similar system</p>
+                        </div>
                     </div>
                 </div>
             </div>

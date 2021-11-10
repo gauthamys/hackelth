@@ -55,7 +55,7 @@ class Parts extends Component{
                     }
                     ]} layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Frequently Replaced Parts</b>',transition: {duration: 1000, easing: 'elastic-in'},
                                 xaxis:{title:'Part ID'}, yaxis:{title:'Replace Frequency'}}}/>
-                <Insights val="Most frequently replaced parts:" ans={this.state.max}/>
+                <Insights val="Most frequently replaced part:" ans={this.state.max}/>
                 </div>
             </div>
         )
