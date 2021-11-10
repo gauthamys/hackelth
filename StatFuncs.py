@@ -93,5 +93,23 @@ def predict(sysid):
   #else:
   #  return "System details not found"
 
+# Part specific Functions :
 
-print(get_labels())
+def avgTimeBetweenServices(sysid):
+  sr_dates = sr[sr['dummy_sysid']==sysid]
+  sr_dates = sr_dates[['sr_open_date', 'sr_close_date']].reset_index()
+  sum = 0
+  for i in range(1, len(sr_dates)) :
+    sum = sum + ((abs(sr_dates.loc[i, "sr_open_date"] - sr_dates.loc[i-1, "sr_close_date"])).days)
+  return(sum/(len(sr_dates)-1))
+
+def avgDownTime(sysid):
+  n = sr[sr['dummy_sysid']==sysid][['sr_open_date', 'sr_close_date']]
+  return((n['sr_close_date'] - n['sr_open_date']).mean().days)
+
+def avgSRCount(sysid):
+  yr = list(pd.DatetimeIndex(sr[sr['dummy_sysid']==sysid]['sr_open_date']).year)
+  sum = 0
+  for i in set(yr):
+    sum = sum+yr.count(i)
+  return(sum/(len(set(yr))))
