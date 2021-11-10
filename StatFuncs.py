@@ -92,14 +92,8 @@ def get_devices():
   return toSeries(cr)
 
 def predict(sysid):
-  #row=status_info.loc[:,['dummy_sysid','Label']]
   label = status_info.loc[status_info['dummy_sysid']==sysid].drop(['dummy_part_number'],axis='columns')
   return toSeries(label)
-  #label_list =  list(label["Label"])
-  #if len(label_list)>0:
-  #return label_list[0]
-  #else:
-  #  return "System details not found"
 
 # Part specific Functions :
 
@@ -136,7 +130,7 @@ def get_sys_install_date(sysid):
 
 # Get similar systems to queried system
 def find_nearest_system(sysid):
-  all_data = pd.read_csv("all_data.csv")
+  all_data = status_info
   ad2=all_data.dropna()
   idx = ad2.loc[ad2['dummy_sysid']==sysid]
   query_vector = idx.to_numpy()
@@ -146,4 +140,17 @@ def find_nearest_system(sysid):
   neigh = NearestNeighbors(n_neighbors=3)
   neigh.fit(ad2)
   neighbors = neigh.kneighbors([query_vector], return_distance = False)
-  return toSeries(all_data.iloc[neighbors[0][1:]])
+  return list(all_data.iloc[neighbors[0][1:]]['dummy_sysid'])
+
+def get_device_stats(sysid):
+  d= {}
+  d['bw_sr'] = avgTimeBetweenServices(sysid)
+  d['down'] = avgDownTime(sysid)
+  d['sr_count'] = avgSRCount(sysid)
+  d['parts_replaced'] =  get_num_replaced(sysid)
+  d['install_date'] = get_sys_install_date(sysid)
+  d['neareast_neigh'] = [find_nearest_system(sysid)]
+  return toSeries(pd.DataFrame(d, index=[0]))
+
+#print(get_device_stats('sys1018'))
+print(find_nearest_system('sys1018'))
