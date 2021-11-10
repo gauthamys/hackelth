@@ -103,18 +103,18 @@ def avgTimeBetweenServices(sysid):
   sum = 0
   for i in range(1, len(sr_dates)) :
     sum = sum + ((abs(sr_dates.loc[i, "sr_open_date"] - sr_dates.loc[i-1, "sr_close_date"])).days)
-  return(sum/(len(sr_dates)-1))
+  return round((sum/(len(sr_dates)-1)), 2)
 
 def avgDownTime(sysid):
   n = sr[sr['dummy_sysid']==sysid][['sr_open_date', 'sr_close_date']]
-  return((n['sr_close_date'] - n['sr_open_date']).mean().days)
+  return round(((n['sr_close_date'] - n['sr_open_date']).mean().days), 2)
 
 def avgSRCount(sysid):
   yr = list(pd.DatetimeIndex(sr[sr['dummy_sysid']==sysid]['sr_open_date']).year)
   sum = 0
   for i in set(yr):
     sum = sum+yr.count(i)
-  return(sum/(len(set(yr))))
+  return round((sum/(len(set(yr)))), 2)
 
 def get_num_replaced(sysid):
   count_replaced = sr.loc[sr['dummy_sysid']==sysid]['dummy_part_number'].count()
@@ -122,7 +122,7 @@ def get_num_replaced(sysid):
 
 def get_sys_sr(sysid):
   first_sr = (sr_sys_counts.loc[sr_sys_counts['dummy_sysid']==sysid]).sort_values('sr_open_date').reset_index()['sr_open_date'][0]
-  return first_sr
+  return pd.to_datetime(first_sr)
 
 def get_sys_install_date(sysid):
   install_date = ib.loc[ib['dummy_sysid']==sysid]['installdate'].unique()[0]
@@ -143,6 +143,16 @@ def find_nearest_system(sysid):
   neighbors = neigh.kneighbors([query_vector], return_distance = False)
   return list(all_data.iloc[neighbors[0][1:]]['dummy_sysid'])
 
+def check_in_service(sysid):
+  sr_sort = sr.sort_values(by=["sr_open_date"])
+  sr_sort.drop_duplicates(inplace=True)
+  sys_row=sr_sort[sr_sort["dummy_sysid"]==sysid].iloc[-1]
+  sr_diff = (pd.Timestamp.now().normalize()-sys_row['sr_close_date'])/ np.timedelta64(1, 'D')
+  if sr_diff>0:
+    return "System currently in service"
+  else:
+    return "System currently not in service"
+
 def get_device_stats(sysid):
   d= {}
   d['bw_sr'] = avgTimeBetweenServices(sysid)
@@ -151,8 +161,9 @@ def get_device_stats(sysid):
   d['parts_replaced'] =  get_num_replaced(sysid)
   d['install_date'] = get_sys_install_date(sysid)
   d['first_sr'] = get_sys_sr(sysid)
+  d['status'] = check_in_service(sysid)
   d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
-print(get_device_stats('sys1018'))
+#print(get_device_stats('sys1018'))
 #print(find_nearest_system('sys1018'))
