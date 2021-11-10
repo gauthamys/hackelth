@@ -78,7 +78,7 @@ def get_total_ec():
 def ec_max_month():
   ec1 = ec.dropna(subset=["dummy_sysid"])
   stats=ec1.loc[ec1.groupby(['aggr_month','aggr_year'])['aggr_value'].idxmax()]
-  return to_json(stats[["dummy_sysid","aggr_value"]])
+  return toSeries(stats[["dummy_sysid","aggr_value"]])
 
 def get_labels():
   gc = status_info.groupby(['Label']).count()
