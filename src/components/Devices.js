@@ -11,7 +11,8 @@ class Device extends Component{
             yellow: [],
             red: [],
             green: [],
-            row_data_sys: []
+            row_data_sys: [],
+            neighs: []
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -49,9 +50,11 @@ class Device extends Component{
         axios.post('http://localhost:5000/device_stats',{'sysid':event.target.value}).then(response=>{
             if(response.data.rows == 1){
                 console.log(response.data)
+                console.log(response.data.row_data[0][6][0])
                 //console.log(response.data.row_data[0][6])
                 this.setState({
-                    row_data_sys: response.data.row_data[0]
+                    row_data_sys: response.data.row_data[0],
+                    neighs: response.data.row_data[0][6]
                 })
             }
             
@@ -97,16 +100,16 @@ class Device extends Component{
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="text-blue-400 text-2xl pt-3 mx-4">
-                            <p class="py-2 hover:text-green-500">Health Status: <span class="text-black">{this.state.row_data[7]}</span></p>
-                            <p class="py-2 hover:text-green-500">Average time between services: {this.state.row_data_sys[0]}</p>
-                            <p class="py-2 hover:text-green-500">Average down-time: {this.state.row_data_sys[1]}</p>
-                            <p class="py-2 hover:text-green-500">Average service requests {this.state.row_data_sys[2]}</p>
-                            <p class="py-2 hover:text-green-500">Total parts replaced {this.state.row_data_sys[3]}</p>
-                            <p class="py-2 hover:text-green-500">First service request</p>
-                            <p class="py-2 hover:text-green-500">Install date {this.state.row_data_sys[4]}</p>
-                            <p class="py-2 hover:text-green-500">Service status</p>
-                            <p class="py-2 hover:text-green-500">Similar system</p>
+                        <div className="text-white text-2xl pt-3 bg-gradient-to-tl from-pink-500 to-red-600 rounded-xl w-6/12 mt-4">
+                            <p class="py-2 px-4 hover:text-green-500">Health Status: <span class="text-black">{this.state.row_data[7]}</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Average time between services: <span class="text-black">{this.state.row_data_sys[0]} days</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Average down-time: <span class="text-black">{this.state.row_data_sys[1]} days</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Average service requests: <span class="text-black">{this.state.row_data_sys[2]}</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Total parts replaced: <span class="text-black">{this.state.row_data_sys[3]}</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">First service request: <span class="text-black">{this.state.row_data_sys[5]}</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Install date: <span class="text-black">{this.state.row_data_sys[4]}</span></p>
+                            <p class="py-2 px-4 hover:text-green-500">Service status: </p>
+                            <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-black">{this.state.neighs[0]}, {this.state.neighs[1]}</span></p>
                         </div>
                     </div>
                 </div>

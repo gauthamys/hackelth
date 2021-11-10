@@ -121,8 +121,8 @@ def get_num_replaced(sysid):
   return count_replaced
 
 def get_sys_sr(sysid):
-  first_sr = (sr_sys_counts.loc[sr_sys_counts['dummy_sysid']==sysid]).sort_values('sr_open_date')['sr_open_date'][0]
-  return pd.to_datetime(first_sr)
+  first_sr = (sr_sys_counts.loc[sr_sys_counts['dummy_sysid']==sysid]).sort_values('sr_open_date').reset_index()['sr_open_date'][0]
+  return first_sr
 
 def get_sys_install_date(sysid):
   install_date = ib.loc[ib['dummy_sysid']==sysid]['installdate'].unique()[0]
@@ -130,12 +130,13 @@ def get_sys_install_date(sysid):
 
 # Get similar systems to queried system
 def find_nearest_system(sysid):
-  all_data = status_info
+  all_data = pd.read_csv("./public/data/all_data_no_label.csv",index_col=False)
+  #all_data.drop(columns=["Label"])
   ad2=all_data.dropna()
   idx = ad2.loc[ad2['dummy_sysid']==sysid]
   query_vector = idx.to_numpy()
   query_vector = np.delete(query_vector, [1,-1])
-  ad2.drop(columns=["dummy_sysid","Label"],inplace=True)
+  ad2.drop(columns=["dummy_sysid"],inplace=True)
   vector = ad2.to_numpy()
   neigh = NearestNeighbors(n_neighbors=3)
   neigh.fit(ad2)
@@ -149,8 +150,9 @@ def get_device_stats(sysid):
   d['sr_count'] = avgSRCount(sysid)
   d['parts_replaced'] =  get_num_replaced(sysid)
   d['install_date'] = get_sys_install_date(sysid)
+  d['first_sr'] = get_sys_sr(sysid)
   d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
-#print(get_device_stats('sys1018'))
-print(find_nearest_system('sys1018'))
+print(get_device_stats('sys1018'))
+#print(find_nearest_system('sys1018'))
