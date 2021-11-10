@@ -6,8 +6,8 @@ class Card extends Component{
     }
     render(){
         return(
-            <div className='resize relative bg-purple-300 h-96 rounded-xl mt-6'>
-                hello
+            <div className='ml-4 mr-4 resize relative bg-gradient-to-tl from-pink-500 to-red-600 h-16 rounded-xl mt-6 text-2xl text-white p-5'>
+                Devices with least health scores : 
             </div>
             
         )

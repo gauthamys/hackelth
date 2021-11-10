@@ -1,7 +1,8 @@
 import { Component } from "react";
 import ExamCounts from "./ExamCounts";
 import Parts from "./Parts";
-
+import Pie from "./Pie";
+import Card from "./Card"
 class Home extends Component{
     constructor(props){
         super(props);
@@ -17,6 +18,8 @@ class Home extends Component{
                     <div className='mt-10'>
                         <ExamCounts />
                         <Parts />
+                        <Pie />
+                        <Card/>
                     </div>
                 </div>
             </div>

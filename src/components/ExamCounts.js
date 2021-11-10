@@ -62,7 +62,8 @@ class ExamCounts extends Component{
                             }
                         }
                     ]} 
-                    layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>", marker: '#1ABC9C',
+                    layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>",transition: {duration: 1000, easing: 'elastic-in'},
+                     marker: '#1ABC9C',
                             xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts',
                         annotations:[
                             {
@@ -75,7 +76,7 @@ class ExamCounts extends Component{
                                 arrowhead: 7,
                                 ax: 0,
                                 ay: -40
-                            }                            
+                            }                           
                         ]
 
                         }}}

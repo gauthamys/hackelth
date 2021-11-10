@@ -1,7 +1,6 @@
 import Modal from 'react-modal';
 import { useState } from 'react';
-  
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+import Logo from '../model.jpg'
   
 function Intro() {
     const [modalIsOpen, setIsOpen] = useState(true);
@@ -20,12 +19,16 @@ function Intro() {
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                className='absolute center rounded-2xl my-2 mx-48 w-3/4 h-3/4 bg-gray-800 text-white opacity-95'
+                className='rounded-2xl my-8 mx-48 w-3/4 bg-blue-800 text-white py-5'
             >
                 <div className='text-center p-8'>
-                    <div className='text-3xl'>Prognostic Monitoring and Analysis of Healthscores</div>
-                    <div>I am a modal</div>
+                    <div className='text-3xl font-extrabold text-green-200'>Prognostic Monitoring and Analysis of Healthscores</div>
+                    <div class="text-xl text-blue-200 p-5 font-semibold"><br/>To identify the health of parts which can be used for prognostics analytics in many use cases like upgrades,     
+                    e-commerce at different stages of an invisible</div>
+                    <div class="grid place-items-center">
+                        <img src={Logo} alt="Logo" className='rounded-xl shadow-xl my-5 w-11/12'/>
+                    </div>
+                    <div className="text-2xl py-5">Health score estimated using Decision Tree Regression.</div>
                 </div>
             </Modal>
         </div>
