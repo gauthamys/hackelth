@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ,dummy_sysid,ageagainstinstallation,RemainingTime,count,hour,Last_service,dummy_part_number,Label
+=======
+drop,dummy_sysid,ageagainstinstallation,RemainingTime,count,hour,Last_service,dummy_part_number,Label
+>>>>>>> 15f81b650476d0e54bfc6f9663fd2e518972b972
 0,sys1420,11.18,7.214384963414718,12,5.5,0.15058488538436793,0,Green
 2970,sys1041,11.13,0.0,14,0.0,3.1568067790577485,0,Red
 5622,sys1393,11.12,9.941340342375273,20,1.0,4.142453301573612,0,Green
