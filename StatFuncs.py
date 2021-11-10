@@ -113,3 +113,15 @@ def avgSRCount(sysid):
   for i in set(yr):
     sum = sum+yr.count(i)
   return(sum/(len(set(yr))))
+
+def get_num_replaced(sysid):
+  count_replaced = sr.loc[sr['dummy_sysid']==sysid]['dummy_part_number'].count()
+  return count_replaced
+
+def get_sys_sr(sysid):
+  first_sr = (sr_sys_counts.loc[sr_sys_counts['dummy_sysid']==sysid]).sort_values('sr_open_date')['sr_open_date'][0]
+  return pd.to_datetime(first_sr)
+
+def get_sys_install_date(sysid):
+  install_date = ib.loc[ib['dummy_sysid']==sysid]['installdate'].unique()[0]
+  return pd.to_datetime(install_date)
