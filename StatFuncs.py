@@ -70,6 +70,11 @@ def get_total_ec():
   counts = ec.groupby(['dummy_sysid']).agg({'aggr_value':'sum'}).reset_index()
   counts = counts.sort_values('aggr_value', ascending=False)
   return toSeries(counts)
+  
+def ec_max_month():
+  ec1 = ec.dropna(subset=["dummy_sysid"])
+  stats=ec1.loc[ec1.groupby(['aggr_month','aggr_year'])['aggr_value'].idxmax()]
+  return to_json(stats[["dummy_sysid","aggr_value"]])
 
 def predict(sysid):
   status_info=pd.read_csv("all_data.csv",index_col=False)
