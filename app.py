@@ -57,5 +57,11 @@ def get_predictions():
     sysid = data['sysid']
     return predict(sysid)
 
+@app.route('/predict',methods=['POST'])
+def get_neighbors():
+    data = request.json
+    sysid = data['sysid']
+    return find_nearest_system(sysid)
+
 if __name__ == '__main__':
     app.run(debug=False)

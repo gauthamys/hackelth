@@ -2,6 +2,9 @@ from logging import critical
 from os import stat
 import pandas as pd
 from flask import jsonify
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
+
 sr_sys_counts=pd.read_csv("./public/data/sr_sys_counts.csv")
 ib = pd.read_csv("./public/data/Hackathon_IB_Data_1.csv")
 sr = pd.read_csv("./public/data/Hackathon_SR_Data_1.csv")
@@ -130,3 +133,17 @@ def get_sys_sr(sysid):
 def get_sys_install_date(sysid):
   install_date = ib.loc[ib['dummy_sysid']==sysid]['installdate'].unique()[0]
   return pd.to_datetime(install_date)
+
+# Get similar systems to queried system
+def find_nearest_system(sysid):
+  all_data = pd.read_csv("all_data.csv")
+  ad2=all_data.dropna()
+  idx = ad2.loc[ad2['dummy_sysid']==sysid]
+  query_vector = idx.to_numpy()
+  query_vector = np.delete(query_vector, [1,-1])
+  ad2.drop(columns=["dummy_sysid","Label"],inplace=True)
+  vector = ad2.to_numpy()
+  neigh = NearestNeighbors(n_neighbors=3)
+  neigh.fit(ad2)
+  neighbors = neigh.kneighbors([query_vector], return_distance = False)
+  return toSeries(all_data.iloc[neighbors[0][1:]])
