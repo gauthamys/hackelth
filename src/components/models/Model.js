@@ -24,17 +24,26 @@ const Model = (props) => {
   );
   console.log("color:"+props.colour)
   console.log(gltf.scene.children)
-  gltf.scene.children[0].children[0].material.color['r'] = -4
-  gltf.scene.children[0].children[0].material.color['g'] = -4
-  gltf.scene.children[0].children[0].material.color['b'] = 1
-  gltf.scene.children[0].children[0].material.emissive['r'] = 3
 
-  /*gltf.scene.children[0].children[0].material.color['r'] = props.colour[0]
-  gltf.scene.children[0].children[0].material.color['g'] = props.colour[1]
-  gltf.scene.children[0].children[0].material.color['b'] = props.colour[2]
-  gltf.scene.children[0].children[0].material.emissive['r'] = props.colour[3]
-  gltf.scene.children[0].children[0].material.emissive['g'] = props.colour[4]
-  gltf.scene.children[0].children[0].material.emissive['b'] = props.colour[5]*/
+  var x = props.colour;
+  console.log("len:"+props.colour)
+  if (typeof props.colour !== 'undefined')
+  {
+      gltf.scene.children[0].children[0].material.color['r'] = props.colour[0]
+      gltf.scene.children[0].children[0].material.color['g'] = props.colour[1]
+      gltf.scene.children[0].children[0].material.color['b'] = props.colour[2]
+      gltf.scene.children[0].children[0].material.emissive['r'] = props.colour[3]
+      gltf.scene.children[0].children[0].material.emissive['g'] = props.colour[4]
+      gltf.scene.children[0].children[0].material.emissive['b'] = props.colour[5]
+  }
+  else
+  {
+    gltf.scene.children[0].children[0].material.color['r'] = 255
+    gltf.scene.children[0].children[0].material.color['g'] = 255
+    gltf.scene.children[0].children[0].material.color['b'] = 255
+    gltf.scene.children[0].children[0].material.emissive['r'] = 0
+  }
+  
   
   return (
     <>
