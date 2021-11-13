@@ -24,7 +24,7 @@ const Model = () => {
   );
   return (
     <>
-      <primitive object={gltf.scene} scale={0.7} dispose={null} />
+      <primitive object={gltf.scene} scale={0.6} dispose={null} />
     </>
   );
 };
@@ -38,7 +38,7 @@ const Head = (props) => {
           <mesh>
           <Model />
           </mesh>
-          <OrbitControls autoRotate autoRotateSpeed={0.6} />
+          <OrbitControls autoRotate autoRotateSpeed={-0.6} />
           <Environment preset="sunset" background={false} />
         </Suspense>
       </Canvas>

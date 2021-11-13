@@ -19,6 +19,9 @@ function SideBar(){
                     <li className='navitem'>
                         <NavLink to='/contact'>Contact</NavLink>
                     </li>
+                    <li className='navitem'>
+                        <NavLink to='/login'>Login</NavLink>
+                    </li>
                 </ul>
                 </nav>
             </div>

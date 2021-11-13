@@ -50,7 +50,7 @@ class ExamCounts extends Component{
     }
     render(){
         return(
-            <div className='mt-5 ml-4'>
+            <div className='mt-5 ml-4 mb-5'>
                 <div className='inline-flex'>
                     <Plot data={[
                         {

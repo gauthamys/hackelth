@@ -122,7 +122,7 @@ class Device extends Component{
                         </table>
                         <div className='grid grid-cols-2 w-11/12'>
                             <div className={"text-white text-base mt-4 "+(color[this.state.row_data[7]])}>
-                                <p class="py-2 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
+                                <p class="py-2 pt-4 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
                                 <p class="py-2 px-4">Average time between services: <b>{this.state.row_data_sys[0]} days</b></p>
                                 <p class="py-2 px-4">Average down-time: <b>{this.state.row_data_sys[1]} days</b></p>
                                 <p class="py-2 px-4">Average service requests: <b>{this.state.row_data_sys[2]}</b></p>

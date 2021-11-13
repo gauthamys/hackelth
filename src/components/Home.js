@@ -16,7 +16,7 @@ class Home extends Component{
                         Global Insights
                     </span>
                     <div className='mt-10'>
-                        <Pie className='shadow-xl'/>
+                        <Pie />
                         <Parts />
                         <ExamCounts />
                     </div>
