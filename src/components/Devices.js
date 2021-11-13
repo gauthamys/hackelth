@@ -113,7 +113,7 @@ class Device extends Component{
                                 <p class="py-2 px-4 hover:text-green-500">Service status: <span class="text-white"><b>{this.state.row_data_sys[6]}</b></span></p>
                                 {/* <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p> */}
                             </div>
-                            <Model id={this.state.sysid} color={color[this.state.row_data[7]]} />
+                            <Model id={this.state.sysid} color={color[this.state.row_data[7]]} colorName={this.state.row_data[7]} />
 
                         </div>
                     </div>
