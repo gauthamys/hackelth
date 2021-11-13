@@ -96,7 +96,7 @@ class Device extends Component{
                                 </button>
                             </div>
                         </div>
-                        <div className={'inline-flex w-11/12 '+(this.state.found==false?'visible':'hidden')}>
+                        <div className={'inline-flex w-screen '+(this.state.found==false?'visible':'hidden')}>
                             <p className={'py-4 pl-4 bg-red-200 text-red-900 text-base w-2/5 justify-evenly'}>{this.state.found == false? 'id '+(this.state.querySysId)+' not found': ''}</p>
                             <button className='text-base text-red-900 bg-red-200 p-4' onClick={()=>{this.setState({found: true})}}>x</button>
                         </div>                        
@@ -120,8 +120,8 @@ class Device extends Component{
                                 </tr>
                             </tbody>
                         </table>
-                        <div className='grid grid-cols-2'>
-                            <div className={"text-white text-2xl pt-3 rounded-xl mt-4 "+(color[this.state.row_data[7]])}>
+                        <div className='grid grid-cols-2 w-11/12'>
+                            <div className={"text-white text-base mt-4 "+(color[this.state.row_data[7]])}>
                                 <p class="py-2 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
                                 <p class="py-2 px-4">Average time between services: <b>{this.state.row_data_sys[0]} days</b></p>
                                 <p class="py-2 px-4">Average down-time: <b>{this.state.row_data_sys[1]} days</b></p>
@@ -133,7 +133,6 @@ class Device extends Component{
                                 {/* <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p> */}
                             </div>
                             <Model id={this.state.sysid} color={color[this.state.row_data[7]]} />
-
                         </div>
                     </div>
                 </div>
