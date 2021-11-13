@@ -47,8 +47,8 @@ const Head = (props) => {
   const color={Green:[-4, 1, 1,0, 3, 1],Red:[-4,1, 1,3, 0, 0],Yellow:[-4, -4, 1, 3, 0, 0]}
   console.log(color[props.colorName])
   return (
-    <div className={'w-96 h-96 mt-5 ml-10 border-'+(props.color)}>
-      <p className={'text-base text-center p-2 rounded-tr-xl rounded-tl-xl '+(props.color)}>{props.id}</p>
+    <div className='h-96 mt-4 border'>
+      <p className={'text-base shadow-2xl text-center p-2 bg-gray-200 text-gray-900'}>{props.id}</p>
       <Canvas camera={{ position: [20, 50, 100] }}>
         <Suspense fallback={<Loader />}>
           <mesh>
