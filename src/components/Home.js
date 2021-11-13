@@ -17,8 +17,8 @@ class Home extends Component{
                     </span>
                     <div className='mt-10'>
                         <Pie className='shadow-xl'/>
-                        <ExamCounts />
                         <Parts />
+                        <ExamCounts />
                     </div>
                     <Card/>
                 </div>
