@@ -53,8 +53,8 @@ class Device extends Component{
                 console.log(response.data.row_data[0])
                 //console.log(response.data.row_data[0][6])
                 this.setState({
-                    row_data_sys: response.data.row_data[0],
-                    neighs: response.data.row_data[0][7]
+                    row_data_sys: response.data.row_data[0]
+                    //neighs: response.data.row_data[0][7]
                 })
             }
             
@@ -109,7 +109,7 @@ class Device extends Component{
                             <p class="py-2 px-4 hover:text-green-500">First service request: <span class="text-white"><b>{this.state.row_data_sys[5]}</b></span></p>
                             <p class="py-2 px-4 hover:text-green-500">Install date: <span class="text-white"><b>{this.state.row_data_sys[4]}</b></span></p>
                             <p class="py-2 px-4 hover:text-green-500">Service status: <span class="text-white"><b>{this.state.row_data_sys[6]}</b></span></p>
-                            <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p>
+                            {/* <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p> */}
                         </div>
         
                     </div>

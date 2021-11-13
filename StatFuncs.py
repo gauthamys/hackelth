@@ -162,7 +162,7 @@ def get_device_stats(sysid):
   d['install_date'] = get_sys_install_date(sysid)
   d['first_sr'] = get_sys_sr(sysid)
   d['status'] = check_in_service(sysid)
-  d['neareast_neigh'] = [find_nearest_system(sysid)]
+  #d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
 #print(get_device_stats('sys1018'))
