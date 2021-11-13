@@ -6,6 +6,8 @@ class Device extends Component{
     constructor(props){
         super(props);
         this.state = {
+            found: null,
+            querySysId: '',
             sysid: '',
             data: [],
             row_data: [],
@@ -16,6 +18,7 @@ class Device extends Component{
             neighs: []
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
         axios.get('http://localhost:5000/get_devices').then(res => {
@@ -33,22 +36,33 @@ class Device extends Component{
             }
         })
     }
-
-    handleChange(event){
-        axios.post('http://localhost:5000/predict',{'sysid':event.target.value}).then(response=>{
+    handleChange(e){
+        this.setState({
+            querySysId: e.target.value
+        })
+    }
+    handleSubmit(event){
+        event.preventDefault();
+        axios.post('http://localhost:5000/predict',{'sysid':this.state.querySysId}).then(response=>{
             if(response.data.rows == 1){
                 console.log(response.data)
                 console.log(response.data.row_data[0][6])
                 this.setState({
-                    sysid: event.target.value,
+                    found: true,
+                    sysid: response.data.row_data[0][1],
                     data: response.data,
                     row_data: response.data.row_data[0],
                     label: response.data.row_data[0][7]
                 })
             }
+            else{
+                this.setState({
+                    found: false
+                })
+            }
             
         })
-        axios.post('http://localhost:5000/device_stats',{'sysid':event.target.value}).then(response=>{
+        axios.post('http://localhost:5000/device_stats',{'sysid':this.state.querySysId}).then(response=>{
             if(response.data.rows == 1){
                 console.log(response.data)
                 console.log(response.data.row_data[0])
@@ -73,14 +87,19 @@ class Device extends Component{
                         <div class="text-2xl container py-5 mx-auto flex flex-wrap items-center justify-between">
                             <div class="border-4 border-blue-200 rounded-full bg-white shadow flex w-11/12">
                                 <input
+                                    onChange={this.handleChange}
                                     type="text"
                                     placeholder="Enter sysid here (eg. sys1420)"
-                                    className="rounded-tl-full rounded-bl-full py-2 px-4 w-screen" onChange={this.handleChange} />
-                                <button className="relative bg-gray-300 rounded-tr-full rounded-br-full transition duration-300 hover:bg-green-300 py-2 px-4 mr-0 w-48">
+                                    className="rounded-tl-full rounded-bl-full py-2 px-4 w-screen" />
+                                <button onClick={this.handleSubmit} className="relative bg-gray-300 rounded-tr-full rounded-br-full transition duration-300 hover:bg-green-300 py-2 px-4 mr-0 w-48">
                                     <p className='text-sm'>🔍</p>
                                 </button>
                             </div>
                         </div>
+                        <div className={'inline-flex w-11/12 '+(this.state.found==false?'visible':'hidden')}>
+                            <p className={'py-4 pl-4 bg-red-200 text-red-900 text-base w-2/5 justify-evenly'}>{this.state.found == false? 'id '+(this.state.querySysId)+' not found': ''}</p>
+                            <button className='text-base text-red-900 bg-red-200 p-4' onClick={()=>{this.setState({found: true})}}>x</button>
+                        </div>                        
                         <table class="table-fixed w-11/12 text-2xl rounded-bl-full rounded-br-full mt-4">
                             <thead className="text-left border text-green-400 bg-gray-200">
                                 <tr>
