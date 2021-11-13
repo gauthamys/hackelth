@@ -20,7 +20,7 @@ class Home extends Component{
                         <Parts />
                         <ExamCounts />
                     </div>
-                    <Card/>
+                    {/* <Card/> */}
                 </div>
             </div>
             </>

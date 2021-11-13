@@ -76,7 +76,7 @@ class Device extends Component{
                                     type="text"
                                     placeholder="Enter sysid here (eg. sys1420)"
                                     className="rounded-tl-full rounded-bl-full py-2 px-4 w-screen" onChange={this.handleChange} />
-                                <button className="relative bg-green-300 rounded-tr-full rounded-br-full transition duration-300 hover:bg-red-300 py-2 px-4 mr-0 w-48">
+                                <button className="relative bg-gray-300 rounded-tr-full rounded-br-full transition duration-300 hover:bg-green-300 py-2 px-4 mr-0 w-48">
                                     <p className='text-sm'>🔍</p>
                                 </button>
                             </div>
@@ -102,15 +102,15 @@ class Device extends Component{
                             </tbody>
                         </table>
                         <div className='grid grid-cols-2'>
-                            <div className="text-white text-2xl pt-3 bg-gradient-to-tl from-pink-500 to-red-600 rounded-xl mt-4">
-                                <p class="py-2 px-4 hover:text-green-500">Health Status: <span class="text-white"><b>{this.state.row_data[7]}</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Average time between services: <span class="text-white"><b>{this.state.row_data_sys[0]} days</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Average down-time: <span class="text-white"><b>{this.state.row_data_sys[1]} days</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Average service requests: <span class="text-white"><b>{this.state.row_data_sys[2]}</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Total parts replaced: <span class="text-white"><b>{this.state.row_data_sys[3]}</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">First service request: <span class="text-white"><b>{this.state.row_data_sys[5]}</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Install date: <span class="text-white"><b>{this.state.row_data_sys[4]}</b></span></p>
-                                <p class="py-2 px-4 hover:text-green-500">Service status: <span class="text-white"><b>{this.state.row_data_sys[6]}</b></span></p>
+                            <div className={"text-white text-2xl pt-3 rounded-xl mt-4 "+(color[this.state.row_data[7]])}>
+                                <p class="py-2 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
+                                <p class="py-2 px-4">Average time between services: <b>{this.state.row_data_sys[0]} days</b></p>
+                                <p class="py-2 px-4">Average down-time: <b>{this.state.row_data_sys[1]} days</b></p>
+                                <p class="py-2 px-4">Average service requests: <b>{this.state.row_data_sys[2]}</b></p>
+                                <p class="py-2 px-4">Total parts replaced: <b>{this.state.row_data_sys[3]}</b></p>
+                                <p class="py-2 px-4">First service request: <b>{this.state.row_data_sys[5]}</b></p>
+                                <p class="py-2 px-4">Install date: <b>{this.state.row_data_sys[4]}</b></p>
+                                <p class="py-2 px-4">Service status: <b>{this.state.row_data_sys[6]}</b></p>
                                 {/* <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p> */}
                             </div>
                             <Model id={this.state.sysid} color={color[this.state.row_data[7]]} />

@@ -31,7 +31,7 @@ const Model = () => {
 
 const Head = (props) => {
   return (
-    <div className={'w-96 h-96 mt-5 ml-10 border-'+(props.color)}>
+    <div className='w-96 h-96 mt-5 ml-10'>
       <p className={'text-base text-center p-2 rounded-tr-xl rounded-tl-xl '+(props.color)}>{props.id}</p>
       <Canvas camera={{ position: [20, 50, 100] }}>
         <Suspense fallback={<Loader />}>
