@@ -136,7 +136,7 @@ def find_nearest_system(sysid):
   ad2=all_data.dropna()
   idx = ad2.loc[ad2['dummy_sysid']==sysid]
   query_vector = idx.to_numpy()
-  query_vector = np.delete(query_vector, [1,-1])
+  query_vector = np.delete(query_vector, [1])
   ad2.drop(columns=["dummy_sysid"],inplace=True)
   vector = ad2.to_numpy()
   neigh = NearestNeighbors(n_neighbors=3)
@@ -168,6 +168,14 @@ def get_device_stats(sysid):
 print(get_device_stats('sys1018'))
 #print(find_nearest_system('sys1018'))
 
+def get_exam_counts(sysid):
+  sys_ec = ec[ec['dummy_sysid']==sysid]
+  return sys_ec.shape[0]
+
+def get_sr_counts(sysid):
+  sys_sr = sr[sr['dummy_sysid']==sysid]
+  return sys_sr.shape[0]
+
 def get_age(sysid):
   sys = ib[ib["dummy_sysid"]==sysid]
   age=(pd.Timestamp.now().normalize()-sys['installdate'])/ np.timedelta64(1, 'Y')
@@ -183,6 +191,7 @@ def get_last_service(sysid):
     return sorted(list(last_service),reverse=True)[0]
   except IndexError:
     return 0
+
 def get_sys_parts(sysid):
   lgbm=load_model('PartModel')
   sys_parts = sr[sr['dummy_sysid']==sysid]
@@ -191,7 +200,7 @@ def get_sys_parts(sysid):
   ec_count=get_exam_counts(sysid)
   age = get_age(sysid)
   last_sr= get_last_service(sysid)
-  sys_parts["sr_freq"]=sys_parts["dummy_sysid"].apply(get_sr_year_counts)
+  sys_parts["sr_freq"]=sys_parts["dummy_sysid"].apply(get_sr_counts)
   sys_parts["ageagainstinstallation"]=[age]*sys_parts.shape[0]
   sr_freq = list(sys_parts["sr_freq"])[0]
   sys_parts["ec_freq"]=sys_parts["dummy_sysid"].apply(get_exam_counts)

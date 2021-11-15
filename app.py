@@ -64,5 +64,19 @@ def get_neighbors():
     sysid = data['sysid']
     return get_device_stats(sysid)
 
+@app.route('/device_stats',methods=['POST'])
+def get_neighbors():
+    data = request.json
+    print(data)
+    sysid = data['sysid']
+    return get_device_stats(sysid)
+
+@app.route('/part_predict',methods=['POST'])
+def get_part_predictions():
+    data = request.json
+    print(data)
+    sysid = data['sysid']
+    return get_sys_parts(sysid)
+    
 if __name__ == '__main__':
     app.run(debug=False)
