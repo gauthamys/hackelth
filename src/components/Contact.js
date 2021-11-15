@@ -5,8 +5,8 @@ function Card(){
 }
 function Contact(){
     return(
-        <div className='relative ml-60 p-4 pt-6'>
-            <div class="h-screen">
+        <div>
+            <div className='heading h-screen bg-test bg-cover'>
                 <span class="bg-clip-text text-7xl text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                     Contact
                 </span>
@@ -25,8 +25,9 @@ function Contact(){
                         <p className='text-2xl p-5'>Gautham</p>
                     </div>
                 </div>
-            </div>
         </div>
+        </div>
+        
     )
 }
 export default Contact;

@@ -78,12 +78,12 @@ class Device extends Component{
     render(){
         const color={Green:'bg-green-300 text-green-900',Red:'bg-red-300 text-red-900',Yellow:'bg-yellow-200 text-yellow-900'}
         return(
-            <div className='heading'>
+            <div className='heading bg-white'>
                 <div class="text-7xl ml-2">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                    {/* <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                         Devices
-                    </span>
-                    <div className="text-3xl h-screen mt-4">
+                    </span> */}
+                    <div className="text-3xl h-screen mt-1">
                         <div class="text-2xl container py-5 mx-auto flex flex-wrap items-center justify-between">
                             <div class="border-4 border-blue-200 rounded-full bg-white shadow flex w-10/12">
                                 <input
@@ -122,7 +122,7 @@ class Device extends Component{
                         </table>
                         <div className='grid grid-cols-2 w-10/12'>
                         <Model id={this.state.sysid} color={color[this.state.row_data[7]]} colorName={this.state.row_data[7]} />
-                            <div className={"text-white text-base mt-4 opacity-80 "+(color[this.state.row_data[7]])}>
+                            <div className={"text-base text-white mt-4 opacity-80 "+(color[this.state.row_data[7]])}>
                                 <p class="py-2 pt-4 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
                                 <p class="py-2 px-4">Average time between services: <b>{this.state.row_data_sys[0]} days</b></p>
                                 <p class="py-2 px-4">Average down-time: <b>{this.state.row_data_sys[1]} days</b></p>

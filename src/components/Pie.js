@@ -28,7 +28,7 @@ class Pie extends Component{
     }
     render(){
         return(
-            <div className='ml-4 mt-5'>
+            <div className=''>
                 <div className='inline-flex'>
                 <Plot data={[
                         {
@@ -38,7 +38,7 @@ class Pie extends Component{
                             marker: {colors:['#27AE60','#E74C3C','#F1C40F']}
                         }
                     ]}
-                    layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Global Device Statuses</b>'}}/>
+                    layout={{width: 500, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb",title:'<b>Global Device Statuses</b>'}}/>
                     <Insights val='Absolute counts' ans={[1].map(item => {
                         return(
                             <>

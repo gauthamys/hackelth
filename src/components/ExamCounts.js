@@ -50,7 +50,7 @@ class ExamCounts extends Component{
     }
     render(){
         return(
-            <div className='mt-5 ml-4 mb-5'>
+            <div className='mt-3 mb-10'>
                 <div className='inline-flex'>
                     <Plot data={[
                         {
@@ -62,7 +62,7 @@ class ExamCounts extends Component{
                             }
                         }
                     ]} 
-                    layout={{width: 875, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>",transition: {duration: 1000, easing: 'elastic-in'},
+                    layout={{width: 1020, height: 500, plot_bgcolor:"#e5e7eb", paper_bgcolor:"#e5e7eb", title:"<b>Exam counts</b>",transition: {duration: 1000, easing: 'linear-in'},
                      marker: '#1ABC9C',
                             xaxis:{zeroline:false,title:'Month/Year'}, yaxis:{zeroline:false,title:'Global Exam Counts',
                         annotations:[

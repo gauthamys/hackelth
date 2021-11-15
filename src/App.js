@@ -11,7 +11,7 @@ function App() {
     <>
       <SideBar />
       <Intro />
-      <div>
+      <div className=''>
       <Switch>
         <Route path='/devices' component={Device} />
         <Route path='/contact' component={Contact} />

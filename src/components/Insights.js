@@ -3,7 +3,7 @@ class Insights extends Component{
     constructor(props){
         super(props);
         this.state={
-            open: true
+            open: false
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -22,9 +22,9 @@ class Insights extends Component{
     render(){
         return(
             <>
-            <div>
+            <div className='absolute ml-0 mt-5'>
             <button className={'rounded-full ml-5 text-white w-8 h-8 opacity-80 '+(this.state.open ? 'bg-green-600': 'bg-green-400')} onClick={this.handleClick}>{this.state.open ? 'x' : 'i'}</button>
-                <div className={'transition transform ease-in-out duration-1000 relative shadow-xl ml-5 mt-3 w-80 h-80 opacity-90 rounded-xl bg-gradient-to-tl from-green-500 to-green-600 '+(this.state.open ? 'visible':'invisible')}>
+                <div className={'relative shadow-xl ml-5 mt-3 w-80 h-80 opacity-90 rounded-xl bg-green-500 '+(this.state.open ? 'visible':'invisible')}>
                     <p className='text-2xl text-white p-5'><b>Insights</b></p>
                     <p className='text-xl text-white p-5'>{this.props.val}<br /><b className='text-2xl'>{this.props.ans}</b></p>
                 </div>

@@ -15,14 +15,14 @@ function Intro() {
 
     return (
 
-        <div>
+        <div> 
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                className='rounded-2xl my-8 mx-48 w-3/4 bg-blue-800 text-white py-5'
+                className='rounded-2xl mt-3 mx-48 w-3/4 bg-gray-800 bg-cover text-white py-5'
             >
                 <div className='text-center p-8'>
-                    <div className='text-3xl font-extrabold text-green-200'>Prognostic Monitoring and Analysis of Healthscores</div>
+                    <div className='text-3xl font-bold text-green-200'>Prognostic Monitoring and Analysis of Healthscores</div>
                     <div class="text-xl text-blue-200 p-5 font-semibold"><br/>To identify the health of parts which can be used for prognostics analytics in many use cases like upgrades,     
                     e-commerce at different stages of an invisible</div>
                     <div class="grid place-items-center">
