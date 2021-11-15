@@ -4,6 +4,7 @@ import pandas as pd
 from flask import jsonify
 from sklearn.neighbors import NearestNeighbors
 import numpy as np
+from pycaret.regression import *
 
 sr_sys_counts=pd.read_csv("./public/data/sr_sys_counts.csv")
 ib = pd.read_csv("./public/data/Hackathon_IB_Data_1.csv")
@@ -103,18 +104,18 @@ def avgTimeBetweenServices(sysid):
   sum = 0
   for i in range(1, len(sr_dates)) :
     sum = sum + ((abs(sr_dates.loc[i, "sr_open_date"] - sr_dates.loc[i-1, "sr_close_date"])).days)
-  return round((sum/(len(sr_dates)-1)), 2)
+  return(sum/(len(sr_dates)-1))
 
 def avgDownTime(sysid):
   n = sr[sr['dummy_sysid']==sysid][['sr_open_date', 'sr_close_date']]
-  return round(((n['sr_close_date'] - n['sr_open_date']).mean().days), 2)
+  return((n['sr_close_date'] - n['sr_open_date']).mean().days)
 
 def avgSRCount(sysid):
   yr = list(pd.DatetimeIndex(sr[sr['dummy_sysid']==sysid]['sr_open_date']).year)
   sum = 0
   for i in set(yr):
     sum = sum+yr.count(i)
-  return round((sum/(len(set(yr)))), 2)
+  return(sum/(len(set(yr))))
 
 def get_num_replaced(sysid):
   count_replaced = sr.loc[sr['dummy_sysid']==sysid]['dummy_part_number'].count()
@@ -122,7 +123,7 @@ def get_num_replaced(sysid):
 
 def get_sys_sr(sysid):
   first_sr = (sr_sys_counts.loc[sr_sys_counts['dummy_sysid']==sysid]).sort_values('sr_open_date').reset_index()['sr_open_date'][0]
-  return pd.to_datetime(first_sr)
+  return first_sr
 
 def get_sys_install_date(sysid):
   install_date = ib.loc[ib['dummy_sysid']==sysid]['installdate'].unique()[0]
@@ -141,7 +142,7 @@ def find_nearest_system(sysid):
   neigh = NearestNeighbors(n_neighbors=3)
   neigh.fit(ad2)
   neighbors = neigh.kneighbors([query_vector], return_distance = False)
-  return list(all_data.iloc[neighbors[0][1:]]['dummy_sysid'])
+  return toSeries(all_data.iloc[neighbors[0][1:]])
 
 def check_in_service(sysid):
   sr_sort = sr.sort_values(by=["sr_open_date"])
@@ -161,9 +162,54 @@ def get_device_stats(sysid):
   d['parts_replaced'] =  get_num_replaced(sysid)
   d['install_date'] = get_sys_install_date(sysid)
   d['first_sr'] = get_sys_sr(sysid)
-  d['status'] = check_in_service(sysid)
-  #d['neareast_neigh'] = [find_nearest_system(sysid)]
+  d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
-#print(get_device_stats('sys1018'))
+print(get_device_stats('sys1018'))
 #print(find_nearest_system('sys1018'))
+
+def get_age(sysid):
+  sys = ib[ib["dummy_sysid"]==sysid]
+  age=(pd.Timestamp.now().normalize()-sys['installdate'])/ np.timedelta64(1, 'Y')
+  try:
+    return list(age)[0]
+  except IndexError:
+    return 0 
+
+def get_last_service(sysid):
+  sys = sr[sr["dummy_sysid"]==sysid]
+  last_service=(pd.Timestamp.now().normalize()-sys['sr_close_date'])/ np.timedelta64(1, 'Y')
+  try:
+    return sorted(list(last_service),reverse=True)[0]
+  except IndexError:
+    return 0
+def get_sys_parts(sysid):
+  lgbm=load_model('PartModel')
+  sys_parts = sr[sr['dummy_sysid']==sysid]
+  sys_parts.dropna(subset=["dummy_part_number"],inplace=True)
+  sr_count = get_sr_counts(sysid)
+  ec_count=get_exam_counts(sysid)
+  age = get_age(sysid)
+  last_sr= get_last_service(sysid)
+  sys_parts["sr_freq"]=sys_parts["dummy_sysid"].apply(get_sr_year_counts)
+  sys_parts["ageagainstinstallation"]=[age]*sys_parts.shape[0]
+  sr_freq = list(sys_parts["sr_freq"])[0]
+  sys_parts["ec_freq"]=sys_parts["dummy_sysid"].apply(get_exam_counts)
+  ec_freq = list(sys_parts["ec_freq"])[0]
+  parts = set(sys_parts["dummy_part_number"])
+  counts=sr["dummy_sysid"].groupby(sr.dummy_part_number).count().to_frame().reset_index()
+  top_replaced=set(counts.head(5))
+  to_predict = parts.union(top_replaced)
+  new_row={}
+  for part in to_predict:
+    if part in parts:
+      sys_parts["avg_time"]=sys_parts["dummy_part_number"].apply(avgTimeBetweenServices)
+      sys_parts["Last_service"]=(pd.Timestamp.now().normalize()-sys_parts['sr_close_date'])/ np.timedelta64(1, 'Y')
+    else:
+      new_row={'dummy_sysid':sysid,'dummy_part_number':part,' ageagainstinstallation':age,"avg_time": 0,"sr_freq":sr_freq,"ec_freq":ec_freq,"Last_service":last_sr}
+      sys_parts.append(new_row,ignore_index=True)
+  sys_parts = sys_parts.loc[:,["dummy_sysid","dummy_part_number","ageagainstinstallation","avg_time","sr_freq","ec_freq","Last_service"]]
+  predictions = predict_model(lgbm, data = sys_parts)
+  predictions["Label"] = pd.qcut(predictions["Label"],q=3,labels=["Red","Yellow","Green"])
+  red_yellow = predictions[(predictions["Label"]=='Red')|(predictions["Label"]=='Yellow')]
+  return red_yellow
