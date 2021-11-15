@@ -12,7 +12,7 @@ function Loader() {
   const { progress } = useProgress();
   return (
     <Html center>
-      <h2 id="loading">{progress} % loaded</h2>
+      <p id="loading" className='text-base'>{progress} % loaded</p>
     </Html>
   );
 }
@@ -43,11 +43,11 @@ const Model = (props) => {
     gltf.scene.children[0].children[0].material.color['b'] = 255
     gltf.scene.children[0].children[0].material.emissive['r'] = 0
   }
-  
+
   
   return (
     <>
-      <primitive object={gltf.scene} scale={0.6} dispose={null} />
+      <primitive object={gltf.scene} scale={0.7} dispose={null} />
     </>
   );
 };

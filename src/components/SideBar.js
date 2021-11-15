@@ -17,10 +17,10 @@ function SideBar(){
                         <NavLink to='/devices'>Devices</NavLink>
                     </li>
                     <li className='navitem'>
-                        <NavLink to='/contact'>Contact</NavLink>
+                        <NavLink to='/login'>Login</NavLink>
                     </li>
                     <li className='navitem'>
-                        <NavLink to='/login'>Login</NavLink>
+                        <NavLink to='/contact'>Contact</NavLink>
                     </li>
                 </ul>
                 </nav>

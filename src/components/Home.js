@@ -15,6 +15,7 @@ class Home extends Component{
                     <span class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-600">
                         Global Insights
                     </span>
+                    <p className='p-4 pl-2 mt-0 pt-0 text-gray-500'> Insights on the overall health of the CT Optima 660 modality </p>
                     <div className='mt-10'>
                         <Pie />
                         <Parts />

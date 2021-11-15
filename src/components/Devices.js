@@ -79,13 +79,13 @@ class Device extends Component{
         const color={Green:'bg-green-300 text-green-900',Red:'bg-red-300 text-red-900',Yellow:'bg-yellow-200 text-yellow-900'}
         return(
             <div className='heading'>
-                <div class="text-7xl">
+                <div class="text-7xl ml-2">
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                         Devices
                     </span>
                     <div className="text-3xl h-screen mt-4">
                         <div class="text-2xl container py-5 mx-auto flex flex-wrap items-center justify-between">
-                            <div class="border-4 border-blue-200 rounded-full bg-white shadow flex w-11/12">
+                            <div class="border-4 border-blue-200 rounded-full bg-white shadow flex w-10/12">
                                 <input
                                     onChange={this.handleChange}
                                     type="text"
@@ -99,8 +99,8 @@ class Device extends Component{
                         <div className={'inline-flex w-screen '+(this.state.found==false?'visible':'hidden')}>
                             <p className={'py-4 pl-4 bg-red-200 text-red-900 text-base w-2/5 justify-evenly'}>{this.state.found == false? 'id '+(this.state.querySysId)+' not found': ''}</p>
                             <button className='text-base text-red-900 bg-red-200 p-4' onClick={()=>{this.setState({found: true})}}>x</button>
-                        </div>                        
-                        <table class="table-fixed w-11/12 text-2xl rounded-bl-full rounded-br-full mt-4">
+                        </div>    
+                        <table class="table-fixed w-10/12 text-2xl rounded-bl-full rounded-br-full mt-4">
                             <thead className="text-left border text-green-400 bg-gray-200">
                                 <tr>
                                 <th className="py-5 px-4">Device</th>
@@ -120,8 +120,9 @@ class Device extends Component{
                                 </tr>
                             </tbody>
                         </table>
-                        <div className='grid grid-cols-2 w-11/12'>
-                            <div className={"text-white text-base mt-4 "+(color[this.state.row_data[7]])}>
+                        <div className='grid grid-cols-2 w-10/12'>
+                        <Model id={this.state.sysid} color={color[this.state.row_data[7]]} colorName={this.state.row_data[7]} />
+                            <div className={"text-white text-base mt-4 opacity-80 "+(color[this.state.row_data[7]])}>
                                 <p class="py-2 pt-4 px-4">Health Status:<b>{this.state.row_data[7]}</b></p>
                                 <p class="py-2 px-4">Average time between services: <b>{this.state.row_data_sys[0]} days</b></p>
                                 <p class="py-2 px-4">Average down-time: <b>{this.state.row_data_sys[1]} days</b></p>
@@ -132,8 +133,6 @@ class Device extends Component{
                                 <p class="py-2 px-4">Service status: <b>{this.state.row_data_sys[6]}</b></p>
                                 {/* <p class="py-2 px-4 hover:text-green-500">Similar systems: <span class="text-white"><b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></span></p> */}
                             </div>
-                            <Model id={this.state.sysid} color={color[this.state.row_data[7]]} colorName={this.state.row_data[7]} />
-
                         </div>
                     </div>
                 </div>
