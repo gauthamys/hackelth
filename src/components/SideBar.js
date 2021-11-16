@@ -12,13 +12,13 @@ function SideBar(){
                 <nav >
                 <ul className='text-2xl'>
                     <li className='navitem'>
-                        <NavLink to='/'>Global Insights</NavLink>
+                        <NavLink to='/'>Login</NavLink>
+                    </li>
+                    <li className='navitem'>
+                        <NavLink to='/global'>Global Insights</NavLink>
                     </li>
                     <li className='navitem'>
                         <NavLink to='/devices'>Devices</NavLink>
-                    </li>
-                    <li className='navitem'>
-                        <NavLink to='/login'>Login</NavLink>
                     </li>
                     <li className='navitem'>
                         <NavLink to='/contact'>Contact</NavLink>

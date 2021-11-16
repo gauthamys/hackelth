@@ -12,9 +12,9 @@ class Login extends Component{
     render(){
         return(
             <>
-            <div className='bg-main bg-cover bg-opacity-50 w-screen h-screen'>
+            <div className='bg-main bg-cover bg-opacity-50 h-screen grid place-items-center'>
                 <div className='heading justify-item-center'>
-                    <div className='ml-96 mt-32 w-96 h-80 bg-white text-center rounded-2xl shadow-3xl'>
+                    <div className='w-96 h-80 bg-white text-center rounded-2xl shadow-3xl'>
                         <div className='text-xl text-gray-900 bg-gray-300 rounded-tr-2xl rounded-tl-2xl'><p className='p-3 text-base'>SSO</p></div>
                         <form onSubmit={this.handleSubmit}>
                         <div className='p-4 mt-4'>
@@ -24,11 +24,11 @@ class Login extends Component{
                             <input type='password' className='w-80 px-4 pl-5 py-2 border-b-4 rounded-2xl -inset-4' placeholder='Password'></input>
                         </div>
                         <div className='inline-flex mt-8 w-full'>
-                        <button type='submit' className='bg-green-400 text-white mt-16 w-1/2 p-2 rounded-bl-xl text-center transform duration-300 active:scale-95 active:bg-green-500'>
-                            <p className='text-base'>login</p>
+                        <button type='submit' onClick={event =>  window.location.href='/global'} className='bg-green-400 text-white mt-16 w-1/2 p-2 rounded-bl-xl text-center transform duration-300 active:scale-95 active:bg-green-500'>
+                            <p className='text-base'>Login</p>
                         </button>
                         <button className='bg-blue-400 text-white mt-16 w-1/2 p-2 rounded-br-xl transform duration-300 active:scale-95 active:bg-blue-500'>
-                            <p className='text-base'>forgot password</p>
+                            <p className='text-base'>Forgot password</p>
                         </button>
                         </div>
                         </form>

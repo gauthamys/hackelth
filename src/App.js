@@ -15,8 +15,10 @@ function App() {
       <Switch>
         <Route path='/devices' component={Device} />
         <Route path='/contact' component={Contact} />
-        <Route path='/login' component={Login} />
-        <Route path='/' component={Home} />
+        {/* <Route path='/login' component={Login} />
+        <Route path='/' component={Home} /> */}
+        <Route path='/global' component={Home}/>
+        <Route path='/' component={Login}/>
       </Switch>
       </div>
     </>
