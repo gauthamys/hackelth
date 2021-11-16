@@ -142,7 +142,7 @@ def find_nearest_system(sysid):
   neigh = NearestNeighbors(n_neighbors=3)
   neigh.fit(ad2)
   neighbors = neigh.kneighbors([query_vector], return_distance = False)
-  return toSeries(all_data.iloc[neighbors[0][1:]])
+  return list(all_data.iloc[neighbors[0][1:]]['dummy_sysid'])
 
 def check_in_service(sysid):
   sr_sort = sr.sort_values(by=["sr_open_date"])
@@ -165,8 +165,8 @@ def get_device_stats(sysid):
   d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
-print(get_device_stats('sys1018'))
-#print(find_nearest_system('sys1018'))
+#print(get_device_stats('sys1018'))
+print(find_nearest_system('sys1018'))
 
 def get_exam_counts(sysid):
   sys_ec = ec[ec['dummy_sysid']==sysid]
@@ -221,4 +221,4 @@ def get_sys_parts(sysid):
   predictions = predict_model(lgbm, data = sys_parts)
   predictions["Label"] = pd.qcut(predictions["Label"],q=3,labels=["Red","Yellow","Green"])
   red_yellow = predictions[(predictions["Label"]=='Red')|(predictions["Label"]=='Yellow')]
-  return red_yellow
+  return toSeries(red_yellow)
