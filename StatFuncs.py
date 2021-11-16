@@ -136,13 +136,13 @@ def find_nearest_system(sysid):
   ad2=all_data.dropna()
   idx = ad2.loc[ad2['dummy_sysid']==sysid]
   query_vector = idx.to_numpy()
-  query_vector = np.delete(query_vector, [1,-1])
+  query_vector = np.delete(query_vector, [1])
   ad2.drop(columns=["dummy_sysid"],inplace=True)
   vector = ad2.to_numpy()
   neigh = NearestNeighbors(n_neighbors=3)
   neigh.fit(ad2)
   neighbors = neigh.kneighbors([query_vector], return_distance = False)
-  return toSeries(all_data.iloc[neighbors[0][1:]])
+  return list(all_data.iloc[neighbors[0][1:]]['dummy_sysid'])
 
 def check_in_service(sysid):
   sr_sort = sr.sort_values(by=["sr_open_date"])
@@ -165,8 +165,16 @@ def get_device_stats(sysid):
   d['neareast_neigh'] = [find_nearest_system(sysid)]
   return toSeries(pd.DataFrame(d, index=[0]))
 
-print(get_device_stats('sys1018'))
-#print(find_nearest_system('sys1018'))
+#print(get_device_stats('sys1018'))
+print(find_nearest_system('sys1018'))
+
+def get_exam_counts(sysid):
+  sys_ec = ec[ec['dummy_sysid']==sysid]
+  return sys_ec.shape[0]
+
+def get_sr_counts(sysid):
+  sys_sr = sr[sr['dummy_sysid']==sysid]
+  return sys_sr.shape[0]
 
 def get_age(sysid):
   sys = ib[ib["dummy_sysid"]==sysid]
@@ -183,6 +191,7 @@ def get_last_service(sysid):
     return sorted(list(last_service),reverse=True)[0]
   except IndexError:
     return 0
+
 def get_sys_parts(sysid):
   lgbm=load_model('PartModel')
   sys_parts = sr[sr['dummy_sysid']==sysid]
@@ -191,7 +200,7 @@ def get_sys_parts(sysid):
   ec_count=get_exam_counts(sysid)
   age = get_age(sysid)
   last_sr= get_last_service(sysid)
-  sys_parts["sr_freq"]=sys_parts["dummy_sysid"].apply(get_sr_year_counts)
+  sys_parts["sr_freq"]=sys_parts["dummy_sysid"].apply(get_sr_counts)
   sys_parts["ageagainstinstallation"]=[age]*sys_parts.shape[0]
   sr_freq = list(sys_parts["sr_freq"])[0]
   sys_parts["ec_freq"]=sys_parts["dummy_sysid"].apply(get_exam_counts)
@@ -212,4 +221,4 @@ def get_sys_parts(sysid):
   predictions = predict_model(lgbm, data = sys_parts)
   predictions["Label"] = pd.qcut(predictions["Label"],q=3,labels=["Red","Yellow","Green"])
   red_yellow = predictions[(predictions["Label"]=='Red')|(predictions["Label"]=='Yellow')]
-  return red_yellow
+  return toSeries(red_yellow)
