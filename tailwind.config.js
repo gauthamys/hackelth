@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       animation:{
-        bounce: 'bounce 2.5s infinite',
+        bounce: 'bounce 3s infinite',
         spin: 'spin 2.5s infinite'
       },
       backgroundImage:{
@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       backgroundColor: ['group-focus','focus-within','active'],
       scale: ['focus-within','active'],
+      transform: ['group-hover']
     },
   },
   plugins: [],

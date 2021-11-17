@@ -28,7 +28,7 @@ class Pie extends Component{
     }
     render(){
         return(
-            <div className=''>
+            <div className='mr-2'>
                 <div className='inline-flex'>
                 <Plot data={[
                         {

@@ -17,3 +17,7 @@ td{
 .heading{
     @apply relative ml-60 pt-8 p-4;
 }
+
+.clickable{
+    @apply transform duration-300 active:scale-95;
+}

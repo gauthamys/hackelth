@@ -1,8 +1,8 @@
 import Logo from '../general-electric.svg';
 import { NavLink } from 'react-router-dom';
-function SideBar(){
+function SideBar({ user }){
     return(
-        <div className='fixed ml-0 min-h-full flex'>
+        <div className={'fixed ml-0 min-h-full flex '+(user ?'visible':'hidden')}>
             <div className='bg-blue-900 saturate-50  text-xl text-white max-w-68 shadow-2xl min-w-62'>
                 <div className='w-full relative mt-0 bg-gradient-to-l from-green-500 to-blue-600'>
                     <NavLink to='/'>
@@ -11,14 +11,11 @@ function SideBar(){
                 </div>
                 <nav >
                 <ul className='text-2xl'>
-                    <li className='navitem'>
-                        <NavLink to='/'>Global Insights</NavLink>
+                    <li className='navitem '>
+                        <NavLink to='/insights'>Global Insights</NavLink>
                     </li>
                     <li className='navitem'>
                         <NavLink to='/devices'>Devices</NavLink>
-                    </li>
-                    <li className='navitem'>
-                        <NavLink to='/login'>Login</NavLink>
                     </li>
                     <li className='navitem'>
                         <NavLink to='/contact'>Contact</NavLink>
