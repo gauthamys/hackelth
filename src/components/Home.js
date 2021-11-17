@@ -10,7 +10,7 @@ class Home extends Component{
         return(
             <>
             <div className='heading bg-test bg-cover'>
-                <div className='ml-10'>
+                <div className='ml-20'>
                     <span class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-600 pl-2">
                         Global Insights
                     </span>

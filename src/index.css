@@ -11,7 +11,7 @@ td{
 }
 
 .namecard{
-    @apply flex-1 rounded-xl text-white m-2 bg-gradient-to-t from-pink-400 to-red-500 transition duration-300 ease-in-out transform hover:scale-110 group-hover:bg-black;
+    @apply flex-1 rounded-xl text-white text-center m-2 border-t-2 bg-blue-900 saturate-50;
 }
 
 .heading{

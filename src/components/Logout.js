@@ -14,7 +14,7 @@ class Logout extends Component{
     render(){
         return(
             <div className='fixed top-4 right-4'>
-                <button onClick={this.handleSubmit} className='clickable p-2 px-4 text-white rounded-l-full rounded-r-full bg-main border-gray-500 border-b-2'>
+                <button onClick={this.handleSubmit} className='clickable p-2 px-4 text-white rounded-l-full rounded-r-full bg-blue-900 saturate-50 border-gray-500 border-b-2'>
                     <span className='text-base'> Sign out </span>
                 </button>
             </div>

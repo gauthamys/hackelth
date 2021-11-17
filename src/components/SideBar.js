@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 function SideBar({ user }){
     return(
         <div className={'fixed ml-0 min-h-full flex '+(user ?'visible':'hidden')}>
-            <div className='bg-blue-900 saturate-50  text-xl text-white max-w-68 shadow-2xl min-w-62'>
+            <div className='bg-blue-900 text-xl text-white max-w-68 shadow-2xl min-w-62'>
                 <div className='w-full relative mt-0 bg-gradient-to-l from-green-500 to-blue-600'>
                     <NavLink to='/'>
                     <img src={Logo} className='rounded-3xl w-28 p-4 my-3 mx-5' />
