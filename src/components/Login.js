@@ -10,6 +10,7 @@ class Login extends Component{
             password: '',
             error: ''
         }
+        localStorage.removeItem('logged_in');
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleUsernameChange=this.handleUsernameChange.bind(this);
         this.handlePasswordChange=this.handlePasswordChange.bind(this);
