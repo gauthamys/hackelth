@@ -3,7 +3,6 @@ import Home from './components/Home';
 import Device from './components/Devices';
 import Contact from './components/Contact';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
-import Intro from './components/Intro';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import { Component } from 'react';
@@ -19,13 +18,13 @@ class App extends Component{
     return (
       <>
         <SideBar user={this.state.user}/>
-        <div className=''>
+        <div className='overflow-x-hidden'>
         <Switch>
-          <Route path='/devices' component={Device} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/insights' component={Home} />
-          <Route path='/logout' component={Logout} />
-          <Route path='/' component={Login} />
+          <Route path='/devices' component={() => this.state.user == null ? <Login />:<Device/>} />
+          <Route path='/contact' component={() => this.state.user == null ? <Login />:<Contact/>} />
+          <Route path='/insights' component={() => this.state.user == null ? <Login />:<Home/>} />
+          <Route path='/logout' component={() => this.state.user == null? <Login />:<Logout/>} />
+          <Route path='/' component={() => this.state.user == null ? <Login /> : <Home />} />
         </Switch>
         {this.state.user ? <Logout /> : null}
         </div>

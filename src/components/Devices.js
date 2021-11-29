@@ -1,6 +1,7 @@
 import { Component } from "react";
 import axios from "axios";
 import Model from "./models/Model";
+import PartHealth from "./PartHealth";
 
 class Device extends Component{
     constructor(props){
@@ -134,6 +135,7 @@ class Device extends Component{
                             <p class="py-2 px-4">Similar systems: <b>{this.state.neighs[0]}, {this.state.neighs[1]}</b></p>
                         </div>
                         </div>
+                        {/* {this.state.sysid == '' ? null : <PartHealth sysid={this.state.sysid}/>} */}
                     </div>
                 </div>
             </div>

@@ -14,6 +14,7 @@ class Login extends Component{
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleUsernameChange=this.handleUsernameChange.bind(this);
         this.handlePasswordChange=this.handlePasswordChange.bind(this);
+        this.handleFp = this.handleFp.bind(this);
     }
     handleUsernameChange(e){
         this.setState({
@@ -24,6 +25,16 @@ class Login extends Component{
         this.setState({
             password: e.target.value
         })
+    }
+    handleFp(e){
+        e.preventDefault();
+        let users = [
+            {username: 'Sailesh', password: 'sailesh123'},
+            {username: 'Parimala', password: 'parimala123'},
+            {username: 'Chakita', password: 'chakita123'},
+            {username: 'Gautham', password: 'gautham123'},
+        ]
+        
     }
     handleSubmit(e){
         e.preventDefault();
@@ -86,7 +97,7 @@ class Login extends Component{
                         <button type='submit' className='bg-green-400 text-white mt-16 w-1/2 p-2 rounded-bl-xl text-center transform duration-300 active:scale-95 active:bg-green-500'>
                             <p className='text-base'>login</p>
                         </button>
-                        <button className='bg-blue-400 text-white mt-16 w-1/2 p-2 rounded-br-xl transform duration-300 active:scale-95 active:bg-blue-500'>
+                        <button onClick={this.handleFp} className='bg-blue-400 text-white mt-16 w-1/2 p-2 rounded-br-xl transform duration-300 active:scale-95 active:bg-blue-500'>
                             <p className='text-base'>forgot password</p>
                         </button>
                         </div>

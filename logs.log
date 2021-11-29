@@ -132,3 +132,759 @@
 2021-11-17 23:10:11,117:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
 2021-11-17 23:29:53,027:INFO:Initializing load_model()
 2021-11-17 23:29:53,027:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:46:16,303:INFO:Initializing load_model()
+2021-11-23 20:46:16,304:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:46:20,798:INFO:Initializing predict_model()
+2021-11-23 20:46:20,798:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 20:46:20,798:INFO:Checking exceptions
+2021-11-23 20:46:20,798:INFO:Preloading libraries
+2021-11-23 20:55:10,646:INFO:Initializing load_model()
+2021-11-23 20:55:10,646:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:55:54,656:INFO:Initializing load_model()
+2021-11-23 20:55:54,656:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:55:58,796:INFO:Initializing predict_model()
+2021-11-23 20:55:58,796:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 20:55:58,796:INFO:Checking exceptions
+2021-11-23 20:55:58,796:INFO:Preloading libraries
+2021-11-23 20:56:22,658:INFO:Initializing load_model()
+2021-11-23 20:56:22,658:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:58:22,653:INFO:Initializing load_model()
+2021-11-23 20:58:22,653:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:58:27,087:INFO:Initializing predict_model()
+2021-11-23 20:58:27,087:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 20:58:27,087:INFO:Checking exceptions
+2021-11-23 20:58:27,087:INFO:Preloading libraries
+2021-11-23 20:59:03,659:INFO:Initializing load_model()
+2021-11-23 20:59:03,659:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:59:35,938:INFO:Initializing load_model()
+2021-11-23 20:59:35,938:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 20:59:59,654:INFO:Initializing load_model()
+2021-11-23 20:59:59,654:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:00:04,046:INFO:Initializing predict_model()
+2021-11-23 21:00:04,046:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:00:04,046:INFO:Checking exceptions
+2021-11-23 21:00:04,046:INFO:Preloading libraries
+2021-11-23 21:00:38,549:INFO:Initializing load_model()
+2021-11-23 21:00:38,550:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:00:42,986:INFO:Initializing predict_model()
+2021-11-23 21:00:42,986:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:00:42,986:INFO:Checking exceptions
+2021-11-23 21:00:42,986:INFO:Preloading libraries
+2021-11-23 21:03:18,642:INFO:Initializing load_model()
+2021-11-23 21:03:18,642:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:03:23,078:INFO:Initializing predict_model()
+2021-11-23 21:03:23,078:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:03:23,078:INFO:Checking exceptions
+2021-11-23 21:03:23,078:INFO:Preloading libraries
+2021-11-23 21:03:39,642:INFO:Initializing load_model()
+2021-11-23 21:03:39,642:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:04:03,204:INFO:Initializing load_model()
+2021-11-23 21:04:03,204:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:04:07,752:INFO:Initializing predict_model()
+2021-11-23 21:04:07,752:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:04:07,752:INFO:Checking exceptions
+2021-11-23 21:04:07,752:INFO:Preloading libraries
+2021-11-23 21:04:34,643:INFO:Initializing load_model()
+2021-11-23 21:04:34,643:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:04:38,731:INFO:Initializing predict_model()
+2021-11-23 21:04:38,731:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:04:38,731:INFO:Checking exceptions
+2021-11-23 21:04:38,731:INFO:Preloading libraries
+2021-11-23 21:05:20,955:INFO:Initializing load_model()
+2021-11-23 21:05:20,955:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:06:22,659:INFO:Initializing load_model()
+2021-11-23 21:06:22,659:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:06:27,036:INFO:Initializing predict_model()
+2021-11-23 21:06:27,036:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:06:27,037:INFO:Checking exceptions
+2021-11-23 21:06:27,037:INFO:Preloading libraries
+2021-11-23 21:06:52,411:INFO:Initializing load_model()
+2021-11-23 21:06:52,411:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:06:56,803:INFO:Initializing predict_model()
+2021-11-23 21:06:56,803:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:06:56,803:INFO:Checking exceptions
+2021-11-23 21:06:56,803:INFO:Preloading libraries
+2021-11-23 21:07:01,654:INFO:Initializing load_model()
+2021-11-23 21:07:01,654:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:07:06,162:INFO:Initializing predict_model()
+2021-11-23 21:07:06,163:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:07:06,163:INFO:Checking exceptions
+2021-11-23 21:07:06,163:INFO:Preloading libraries
+2021-11-23 21:07:15,461:INFO:Initializing load_model()
+2021-11-23 21:07:15,461:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:07:19,811:INFO:Initializing predict_model()
+2021-11-23 21:07:19,811:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:07:19,811:INFO:Checking exceptions
+2021-11-23 21:07:19,811:INFO:Preloading libraries
+2021-11-23 21:08:05,454:INFO:Initializing load_model()
+2021-11-23 21:08:05,454:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:08:09,779:INFO:Initializing predict_model()
+2021-11-23 21:08:09,779:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:08:09,779:INFO:Checking exceptions
+2021-11-23 21:08:09,779:INFO:Preloading libraries
+2021-11-23 21:10:26,893:INFO:Initializing load_model()
+2021-11-23 21:10:26,893:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:10:31,294:INFO:Initializing predict_model()
+2021-11-23 21:10:31,294:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:10:31,295:INFO:Checking exceptions
+2021-11-23 21:10:31,295:INFO:Preloading libraries
+2021-11-23 21:11:13,443:INFO:Initializing load_model()
+2021-11-23 21:11:13,444:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-23 21:11:17,750:INFO:Initializing predict_model()
+2021-11-23 21:11:17,750:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-23 21:11:17,750:INFO:Checking exceptions
+2021-11-23 21:11:17,750:INFO:Preloading libraries
+2021-11-25 09:06:59,737:INFO:Initializing load_model()
+2021-11-25 09:06:59,738:INFO:load_model(model_name=PartModel, platform=None, authentication=None, verbose=True)
+2021-11-25 09:07:05,075:INFO:Initializing predict_model()
+2021-11-25 09:07:05,075:INFO:predict_model(estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]), probability_threshold=None, encoded_labels=True, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2021-11-25 09:07:05,075:INFO:Checking exceptions
+2021-11-25 09:07:05,075:INFO:Preloading libraries
+2021-11-29 10:15:36,111:INFO:Initializing load_model()
+2021-11-29 10:15:36,111:INFO:load_model(model_name=PartModel, platform=None, authentication=None, verbose=True)
+2021-11-29 10:15:40,505:INFO:Initializing predict_model()
+2021-11-29 10:15:40,505:INFO:predict_model(estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]), probability_threshold=None, encoded_labels=True, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2021-11-29 10:15:40,505:INFO:Checking exceptions
+2021-11-29 10:15:40,505:INFO:Preloading libraries
+2021-11-29 10:16:43,873:INFO:Initializing load_model()
+2021-11-29 10:16:43,873:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:16:48,133:INFO:Initializing predict_model()
+2021-11-29 10:16:48,133:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:16:48,133:INFO:Checking exceptions
+2021-11-29 10:16:48,133:INFO:Preloading libraries
+2021-11-29 10:18:36,757:INFO:Initializing load_model()
+2021-11-29 10:18:36,757:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:18:41,323:INFO:Initializing predict_model()
+2021-11-29 10:18:41,323:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:18:41,323:INFO:Checking exceptions
+2021-11-29 10:18:41,323:INFO:Preloading libraries
+2021-11-29 10:18:54,446:INFO:Initializing load_model()
+2021-11-29 10:18:54,446:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:18:58,955:INFO:Initializing predict_model()
+2021-11-29 10:18:58,955:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:18:58,955:INFO:Checking exceptions
+2021-11-29 10:18:58,955:INFO:Preloading libraries
+2021-11-29 10:23:42,236:INFO:Initializing load_model()
+2021-11-29 10:23:42,237:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:23:46,564:INFO:Initializing predict_model()
+2021-11-29 10:23:46,564:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:23:46,564:INFO:Checking exceptions
+2021-11-29 10:23:46,564:INFO:Preloading libraries
+2021-11-29 10:24:47,493:INFO:Initializing load_model()
+2021-11-29 10:24:47,493:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:24:51,809:INFO:Initializing predict_model()
+2021-11-29 10:24:51,810:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:24:51,810:INFO:Checking exceptions
+2021-11-29 10:24:51,810:INFO:Preloading libraries
+2021-11-29 10:35:42,129:INFO:Initializing load_model()
+2021-11-29 10:35:42,129:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:35:46,501:INFO:Initializing predict_model()
+2021-11-29 10:35:46,501:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:35:46,501:INFO:Checking exceptions
+2021-11-29 10:35:46,501:INFO:Preloading libraries
+2021-11-29 10:36:06,509:INFO:Initializing load_model()
+2021-11-29 10:36:06,509:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:36:10,200:INFO:Initializing load_model()
+2021-11-29 10:36:10,203:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:36:11,105:INFO:Initializing predict_model()
+2021-11-29 10:36:11,105:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:36:11,114:INFO:Checking exceptions
+2021-11-29 10:36:11,114:INFO:Preloading libraries
+2021-11-29 10:36:15,287:INFO:Initializing predict_model()
+2021-11-29 10:36:15,287:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:36:15,287:INFO:Checking exceptions
+2021-11-29 10:36:15,287:INFO:Preloading libraries
+2021-11-29 10:36:52,761:INFO:Initializing load_model()
+2021-11-29 10:36:52,761:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:36:57,114:INFO:Initializing predict_model()
+2021-11-29 10:36:57,114:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:36:57,114:INFO:Checking exceptions
+2021-11-29 10:36:57,114:INFO:Preloading libraries
+2021-11-29 10:37:10,497:INFO:Initializing load_model()
+2021-11-29 10:37:10,497:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:37:14,912:INFO:Initializing predict_model()
+2021-11-29 10:37:14,912:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:37:14,912:INFO:Checking exceptions
+2021-11-29 10:37:14,912:INFO:Preloading libraries
+2021-11-29 10:37:49,504:INFO:Initializing load_model()
+2021-11-29 10:37:49,505:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:37:53,937:INFO:Initializing predict_model()
+2021-11-29 10:37:53,937:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:37:53,937:INFO:Checking exceptions
+2021-11-29 10:37:53,937:INFO:Preloading libraries
+2021-11-29 10:38:21,501:INFO:Initializing load_model()
+2021-11-29 10:38:21,502:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:38:25,907:INFO:Initializing predict_model()
+2021-11-29 10:38:25,907:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:38:25,907:INFO:Checking exceptions
+2021-11-29 10:38:25,907:INFO:Preloading libraries
+2021-11-29 10:38:38,504:INFO:Initializing load_model()
+2021-11-29 10:38:38,504:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:38:42,865:INFO:Initializing predict_model()
+2021-11-29 10:38:42,865:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:38:42,865:INFO:Checking exceptions
+2021-11-29 10:38:42,865:INFO:Preloading libraries
+2021-11-29 10:39:02,501:INFO:Initializing load_model()
+2021-11-29 10:39:02,501:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=PartModel)
+2021-11-29 10:39:06,916:INFO:Initializing predict_model()
+2021-11-29 10:39:06,916:INFO:predict_model(display=None, ml_usecase=MLUsecase.REGRESSION, verbose=True, round=4, raw_score=False, encoded_labels=True, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(features_todrop=['dummy_sysid'],
+                                      ml_usecase='regression', target='diff')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strat...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='diff')),
+                ('fix_perfect', Remove_100(target='diff')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model', LGBMRegressor(random_state=123)]]))
+2021-11-29 10:39:06,916:INFO:Checking exceptions
+2021-11-29 10:39:06,916:INFO:Preloading libraries
