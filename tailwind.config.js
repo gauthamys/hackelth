@@ -10,7 +10,8 @@ module.exports = {
       backgroundImage:{
         main: "url(https://wallpapercave.com/wp/wp5502848.jpg)",
         modal: "url(https://wallpapercave.com/wp/wp5288685.jpg)",
-        test:"url(https://wallpapercave.com/wp/wp7213376.jpg)"
+        test:"url(https://wallpapercave.com/wp/wp7213376.jpg)",
+        light: "url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80)"
       }
     },
     fontFamily: {

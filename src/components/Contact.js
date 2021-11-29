@@ -5,10 +5,10 @@ function Card(){
 }
 function Contact(){
     return(
-        <div className='heading h-screen bg-test bg-cover'>
+        <div className='heading h-screen'>
             <div className='ml-16 w-10/12'>
                 <div className='flex w-2/3'>
-                <img src='https://image3.mouthshut.com/images/imagesp/925082301s.png' className='flex-2 ml-3 rounded-full w-24 h-24' />
+                <img src='https://image3.mouthshut.com/images/imagesp/925082301s.png' className='flex-2 ml-3 rounded-full w-24 h-24 shadow-xl' />
                     <div className='flex-1 pl-8'>
                     <span class="bg-clip-text text-7xl text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                         Contact

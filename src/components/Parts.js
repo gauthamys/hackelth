@@ -42,7 +42,7 @@ class Parts extends Component{
     }
     render(){
         return(
-            <div className='ml-2 pl-2'>
+            <div className='ml-8'>
                 <div className='inline-flex'>
                 <Plot data={[
                     {

@@ -79,11 +79,11 @@ class Login extends Component{
     }
     render(){
         return(
-            <>
+            <div className=''>
             <Intro />
-            <div className='bg-main bg-cover bg-opacity-50 w-screen h-screen'>
-                <div className='heading justify-item-center'>
-                    <div className='ml-80 mt-24 w-96 h-80 bg-white text-center rounded-2xl shadow-3xl'>
+            <div className='w-screen h-screen grid place-items-center'>
+                <div className='shadow-2xl'>
+                    <div className='w-96 h-80 bg-gray-100 text-center rounded-2xl'>
                         <div className='text-xl text-gray-900 bg-gray-300 rounded-tr-2xl rounded-tl-2xl'><p className='p-3 text-base'>SSO</p></div>
                         <form onSubmit={this.handleSubmit}>
                         <div className='p-4 mt-4'>
@@ -92,7 +92,7 @@ class Login extends Component{
                         <div className=''>
                             <input type='password' onChange={this.handlePasswordChange} className='w-80 px-4 pl-5 py-2 border-b-4 rounded-2xl -inset-4' placeholder='Password'></input>
                         </div>
-                        <p className={'absolute ml-12 p-2 text-base text-red-300 '+(this.state.error == ''? 'hidden':'visible')}>{this.state.error}</p>
+                        <p className={'absolute ml-12 p-2 text-base text-red-500 '+(this.state.error == ''? 'hidden':'visible')}>{this.state.error}</p>
                         <div className='inline-flex mt-8 w-full'>
                         <button type='submit' className='bg-green-400 text-white mt-16 w-1/2 p-2 rounded-bl-xl text-center transform duration-300 active:scale-95 active:bg-green-500'>
                             <p className='text-base'>login</p>
@@ -105,7 +105,7 @@ class Login extends Component{
                     </div>
                 </div>
             </div>
-            </>
+            </div>
         )
     }
 }

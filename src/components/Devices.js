@@ -79,7 +79,7 @@ class Device extends Component{
     render(){
         const color={Green:'bg-green-300 text-green-900',Red:'bg-red-300 text-red-900',Yellow:'bg-yellow-200 text-yellow-900'}
         return(
-            <div className='heading bg-test bg-cover'>
+            <div className='heading'>
                 <div class="text-7xl ml-20">
                     {/* <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
                         Devices
