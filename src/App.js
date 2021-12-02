@@ -24,7 +24,7 @@ class App extends Component{
           <Route path='/contact' component={() => this.state.user == null ? <Login />:<Contact/>} />
           <Route path='/insights' component={() => this.state.user == null ? <Login />:<Home/>} />
           <Route path='/logout' component={() => this.state.user == null? <Login />:<Logout/>} />
-          <Route path='/' component={() => this.state.user == null ? <Login /> : <Home />} />
+          <Route path='/' component={() => this.state.user == null ? <Login /> : <Device />} />
         </Switch>
         {this.state.user ? <Logout /> : null}
         </div>

@@ -102,7 +102,7 @@ class Device extends Component{
                             <button className='text-base text-red-900 bg-red-200 p-4' onClick={()=>{this.setState({found: true})}}>x</button>
                         </div>    
                         <table class="table-fixed w-10/12 text-2xl rounded-bl-full rounded-br-full mt-4">
-                            <p className={'absolute w-9/12 text-center text-base text-gray-600 bg-gray-300 p-2 '+(this.state.row_data.length == 0 ? 'visible' : 'hidden')}>Enter sysid to view device details    </p>
+                            <p className={'absolute w-3/4 text-center text-base text-gray-600 bg-gray-300 p-2 '+(this.state.row_data.length == 0 ? 'visible' : 'hidden')}>Enter sysid to view device details    </p>
                             <thead className="text-left border text-green-400 bg-gray-200">
                                 <tr>
                                 <th className="py-5 px-4">Device</th>

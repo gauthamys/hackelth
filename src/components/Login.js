@@ -59,7 +59,7 @@ class Login extends Component{
                 if(users[obj].password == this.state.password){
                     localStorage.setItem('logged_in',true);
                     window.location.reload();
-                    window.location.replace('http://localhost:3000/insights');
+                    window.location.replace('http://localhost:3000/');
                     return
                 }
             }
